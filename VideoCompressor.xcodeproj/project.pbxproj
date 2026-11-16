@@ -7,97 +7,215 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		AA0000000000000000000029 = {isa = PBXContainerItemProxy; containerPortal = AA0000000000000000000001; proxyType = 1; remoteGlobalIDString = AA0000000000000000000010; remoteInfo = VideoCompressor; };
-		AA0000000000000000000039 = {isa = PBXContainerItemProxy; containerPortal = AA0000000000000000000001; proxyType = 1; remoteGlobalIDString = AA0000000000000000000010; remoteInfo = VideoCompressor; };
-		AA0000000000000000000049 = {isa = PBXContainerItemProxy; containerPortal = AA0000000000000000000001; proxyType = 1; remoteGlobalIDString = AA0000000000000000000010; remoteInfo = VideoCompressor; };
+		AA0000000000000000000029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0000000000000000000010;
+			remoteInfo = VideoCompressor;
+		};
+		AA0000000000000000000039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0000000000000000000010;
+			remoteInfo = VideoCompressor;
+		};
+		AA0000000000000000000049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0000000000000000000010;
+			remoteInfo = VideoCompressor;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0000000000000000000007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000011 /* VideoCompressor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCompressor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000021 /* VideoCompressorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCompressorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000031 /* VideoCompressorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCompressorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000041 /* VideoCompressorPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCompressorPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0000000000000000000007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA0000000000000000000018 /* VideoCompressor */ = {isa = PBXFileSystemSynchronizedRootGroup; path = VideoCompressor; sourceTree = "<group>"; };
-		AA0000000000000000000028 /* VideoCompressorTests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = VideoCompressorTests; sourceTree = "<group>"; };
-		AA0000000000000000000038 /* VideoCompressorUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = VideoCompressorUITests; sourceTree = "<group>"; };
-		AA0000000000000000000048 /* VideoCompressorPerformanceTests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = VideoCompressorPerformanceTests; sourceTree = "<group>"; };
+		AA0000000000000000000018 /* VideoCompressor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VideoCompressor;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000028 /* VideoCompressorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VideoCompressorTests;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000038 /* VideoCompressorUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VideoCompressorUITests;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000048 /* VideoCompressorPerformanceTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VideoCompressorPerformanceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AA0000000000000000000013 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000023 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000033 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000043 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		AA0000000000000000000013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA0000000000000000000002 = {isa = PBXGroup; children = (
-				AA0000000000000000000018,
-				AA0000000000000000000028,
-				AA0000000000000000000038,
-				AA0000000000000000000048,
-				AA0000000000000000000008,
-				AA0000000000000000000003,
-			); sourceTree = "<group>"; };
-		AA0000000000000000000008 /* Config */ = {isa = PBXGroup; children = (AA0000000000000000000007,); path = Config; sourceTree = "<group>"; };
-		AA0000000000000000000003 /* Products */ = {isa = PBXGroup; children = (AA0000000000000000000011, AA0000000000000000000021, AA0000000000000000000031, AA0000000000000000000041, ); name = Products; sourceTree = "<group>"; };
+		AA0000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000018 /* VideoCompressor */,
+				AA0000000000000000000028 /* VideoCompressorTests */,
+				AA0000000000000000000038 /* VideoCompressorUITests */,
+				AA0000000000000000000048 /* VideoCompressorPerformanceTests */,
+				AA0000000000000000000008 /* Config */,
+				AA0000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000011 /* VideoCompressor.app */,
+				AA0000000000000000000021 /* VideoCompressorTests.xctest */,
+				AA0000000000000000000031 /* VideoCompressorUITests.xctest */,
+				AA0000000000000000000041 /* VideoCompressorPerformanceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000008 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000007 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		AA0000000000000000000010 /* VideoCompressor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000015;
-			buildPhases = (AA0000000000000000000012, AA0000000000000000000013, AA0000000000000000000014,);
-			buildRules = ();
-			dependencies = ();
-			fileSystemSynchronizedGroups = (AA0000000000000000000018,);
+			buildConfigurationList = AA0000000000000000000015 /* Build configuration list for PBXNativeTarget "VideoCompressor" */;
+			buildPhases = (
+				AA0000000000000000000012 /* Sources */,
+				AA0000000000000000000013 /* Frameworks */,
+				AA0000000000000000000014 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AA0000000000000000000018 /* VideoCompressor */,
+			);
 			name = VideoCompressor;
-			packageProductDependencies = ();
+			packageProductDependencies = (
+			);
 			productName = VideoCompressor;
-			productReference = AA0000000000000000000011;
+			productReference = AA0000000000000000000011 /* VideoCompressor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AA0000000000000000000020 /* VideoCompressorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000025;
-			buildPhases = (AA0000000000000000000022, AA0000000000000000000023, AA0000000000000000000024,);
-			buildRules = ();
-			dependencies = (AA000000000000000000002A,);
-			fileSystemSynchronizedGroups = (AA0000000000000000000028,);
+			buildConfigurationList = AA0000000000000000000025 /* Build configuration list for PBXNativeTarget "VideoCompressorTests" */;
+			buildPhases = (
+				AA0000000000000000000022 /* Sources */,
+				AA0000000000000000000023 /* Frameworks */,
+				AA0000000000000000000024 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA000000000000000000002A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA0000000000000000000028 /* VideoCompressorTests */,
+			);
 			name = VideoCompressorTests;
-			packageProductDependencies = ();
+			packageProductDependencies = (
+			);
 			productName = VideoCompressorTests;
-			productReference = AA0000000000000000000021;
+			productReference = AA0000000000000000000021 /* VideoCompressorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		AA0000000000000000000030 /* VideoCompressorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000035;
-			buildPhases = (AA0000000000000000000032, AA0000000000000000000033, AA0000000000000000000034,);
-			buildRules = ();
-			dependencies = (AA000000000000000000003A,);
-			fileSystemSynchronizedGroups = (AA0000000000000000000038,);
+			buildConfigurationList = AA0000000000000000000035 /* Build configuration list for PBXNativeTarget "VideoCompressorUITests" */;
+			buildPhases = (
+				AA0000000000000000000032 /* Sources */,
+				AA0000000000000000000033 /* Frameworks */,
+				AA0000000000000000000034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA000000000000000000003A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA0000000000000000000038 /* VideoCompressorUITests */,
+			);
 			name = VideoCompressorUITests;
-			packageProductDependencies = ();
+			packageProductDependencies = (
+			);
 			productName = VideoCompressorUITests;
-			productReference = AA0000000000000000000031;
+			productReference = AA0000000000000000000031 /* VideoCompressorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		AA0000000000000000000040 /* VideoCompressorPerformanceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA0000000000000000000045;
-			buildPhases = (AA0000000000000000000042, AA0000000000000000000043, AA0000000000000000000044,);
-			buildRules = ();
-			dependencies = (AA000000000000000000004A,);
-			fileSystemSynchronizedGroups = (AA0000000000000000000048,);
+			buildConfigurationList = AA0000000000000000000045 /* Build configuration list for PBXNativeTarget "VideoCompressorPerformanceTests" */;
+			buildPhases = (
+				AA0000000000000000000042 /* Sources */,
+				AA0000000000000000000043 /* Frameworks */,
+				AA0000000000000000000044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA000000000000000000004A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA0000000000000000000048 /* VideoCompressorPerformanceTests */,
+			);
 			name = VideoCompressorPerformanceTests;
-			packageProductDependencies = ();
+			packageProductDependencies = (
+			);
 			productName = VideoCompressorPerformanceTests;
-			productReference = AA0000000000000000000041;
+			productReference = AA0000000000000000000041 /* VideoCompressorPerformanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -110,44 +228,123 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					AA0000000000000000000010 = {CreatedOnToolsVersion = 26.0; };
-					AA0000000000000000000020 = {CreatedOnToolsVersion = 26.0; TestTargetID = AA0000000000000000000010; };
-					AA0000000000000000000030 = {CreatedOnToolsVersion = 26.0; TestTargetID = AA0000000000000000000010; };
-					AA0000000000000000000040 = {CreatedOnToolsVersion = 26.0; TestTargetID = AA0000000000000000000010; };
+					AA0000000000000000000010 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					AA0000000000000000000020 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = AA0000000000000000000010;
+					};
+					AA0000000000000000000030 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = AA0000000000000000000010;
+					};
+					AA0000000000000000000040 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = AA0000000000000000000010;
+					};
 				};
 			};
-			buildConfigurationList = AA0000000000000000000004;
+			buildConfigurationList = AA0000000000000000000004 /* Build configuration list for PBXProject "VideoCompressor" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = (en, Base,);
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = AA0000000000000000000002;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = AA0000000000000000000003;
+			productRefGroup = AA0000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = (AA0000000000000000000010, AA0000000000000000000020, AA0000000000000000000030, AA0000000000000000000040, );
+			targets = (
+				AA0000000000000000000010 /* VideoCompressor */,
+				AA0000000000000000000020 /* VideoCompressorTests */,
+				AA0000000000000000000030 /* VideoCompressorUITests */,
+				AA0000000000000000000040 /* VideoCompressorPerformanceTests */,
+			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA0000000000000000000014 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000024 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000034 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000044 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		AA0000000000000000000014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000024 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AA0000000000000000000012 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000022 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000032 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		AA0000000000000000000042 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		AA0000000000000000000012 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000000000000000000042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AA000000000000000000002A = {isa = PBXTargetDependency; target = AA0000000000000000000010; targetProxy = AA0000000000000000000029; };
-		AA000000000000000000003A = {isa = PBXTargetDependency; target = AA0000000000000000000010; targetProxy = AA0000000000000000000039; };
-		AA000000000000000000004A = {isa = PBXTargetDependency; target = AA0000000000000000000010; targetProxy = AA0000000000000000000049; };
+		AA000000000000000000002A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0000000000000000000010 /* VideoCompressor */;
+			targetProxy = AA0000000000000000000029 /* PBXContainerItemProxy */;
+		};
+		AA000000000000000000003A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0000000000000000000010 /* VideoCompressor */;
+			targetProxy = AA0000000000000000000039 /* PBXContainerItemProxy */;
+		};
+		AA000000000000000000004A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0000000000000000000010 /* VideoCompressor */;
+			targetProxy = AA0000000000000000000049 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -157,27 +354,30 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FGASU9H6S2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				DEVELOPMENT_TEAM = FGASU9H6S2;
-				CODE_SIGN_STYLE = Automatic;
-				MARKETING_VERSION = 1.0;
-				CURRENT_PROJECT_VERSION = 1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1","$(inherited)",);
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -187,23 +387,23 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FGASU9H6S2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 6.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				DEVELOPMENT_TEAM = FGASU9H6S2;
-				CODE_SIGN_STYLE = Automatic;
-				MARKETING_VERSION = 1.0;
-				CURRENT_PROJECT_VERSION = 1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -221,14 +421,16 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Video Compressor saves your compressed videos to your photo library when you tap Save to Photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)","@executable_path/Frameworks",);
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 			};
 			name = Debug;
@@ -246,14 +448,16 @@
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Video Compressor saves your compressed videos to your photo library when you tap Save to Photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)","@executable_path/Frameworks",);
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 			};
 			name = Release;
@@ -265,9 +469,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 			};
 			name = Debug;
 		};
@@ -278,9 +482,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 			};
 			name = Release;
 		};
@@ -290,8 +494,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = VideoCompressor;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				TEST_TARGET_NAME = VideoCompressor;
 			};
 			name = Debug;
 		};
@@ -301,8 +505,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = VideoCompressor;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				TEST_TARGET_NAME = VideoCompressor;
 			};
 			name = Release;
 		};
@@ -313,8 +517,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorPerformanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 			};
 			name = Debug;
 		};
@@ -325,19 +529,59 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mdnahidabrar.VideoCompressorPerformanceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCompressor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoCompressor";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA0000000000000000000004 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000005, AA0000000000000000000006,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		AA0000000000000000000015 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000016, AA0000000000000000000017,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		AA0000000000000000000025 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000026, AA0000000000000000000027,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		AA0000000000000000000035 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000036, AA0000000000000000000037,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		AA0000000000000000000045 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000046, AA0000000000000000000047,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		AA0000000000000000000004 /* Build configuration list for PBXProject "VideoCompressor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000005 /* Debug */,
+				AA0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000015 /* Build configuration list for PBXNativeTarget "VideoCompressor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000016 /* Debug */,
+				AA0000000000000000000017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000025 /* Build configuration list for PBXNativeTarget "VideoCompressorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000026 /* Debug */,
+				AA0000000000000000000027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000035 /* Build configuration list for PBXNativeTarget "VideoCompressorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000036 /* Debug */,
+				AA0000000000000000000037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000000000000000000045 /* Build configuration list for PBXNativeTarget "VideoCompressorPerformanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000046 /* Debug */,
+				AA0000000000000000000047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 	};
 	rootObject = AA0000000000000000000001 /* Project object */;

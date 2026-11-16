@@ -16,7 +16,7 @@ Things that need you or your Apple account before TestFlight and App Store submi
 ## App Store Connect metadata
 - [ ] Support URL and Privacy Policy URL (both required).
 - [ ] App Privacy answers: "Data Not Collected". The profile name and email never leave the device.
-- [ ] Screenshots for iPhone 6.9" and iPad 13". If you reuse the welcome screen, keep the "Example" caption visible.
+- [ ] Screenshots for iPhone 6.9" (iPhone-only app, no iPad screenshots needed). If you reuse the welcome screen, keep the "Example" caption visible.
 - [ ] Category: Photo & Video. Age rating questionnaire.
 - [ ] Export compliance: already declared in Info.plist (`ITSAppUsesNonExemptEncryption = NO`).
 

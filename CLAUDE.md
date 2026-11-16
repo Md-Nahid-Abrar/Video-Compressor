@@ -2,7 +2,7 @@
 
 ## Overview
 
-- iOS 26 SwiftUI app targeting iPhone and iPad
+- iOS 26 SwiftUI app targeting iPhone only (no iPad)
 - Minimum deployment: iOS 26
 - Swift 6 with strict concurrency
 - Uses SwiftUI throughout - no UIKit unless absolutely necessary

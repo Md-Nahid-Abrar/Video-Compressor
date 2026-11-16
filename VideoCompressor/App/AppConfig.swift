@@ -1,0 +1,24 @@
+import Foundation
+
+/// Static app-wide configuration values.
+nonisolated enum AppConfig {
+    /// Support contact shown in Settings. Replace with a monitored address before App Store submission.
+    static let supportEmail = "developer@gmail.com"
+
+    static var appName: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Video Compressor"
+    }
+
+    static var version: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+    }
+
+    static var build: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1"
+    }
+
+    /// Prefix for continued-processing task identifiers. Matches the wildcard entry in Info.plist.
+    static var backgroundTaskPrefix: String {
+        (Bundle.main.bundleIdentifier ?? "com.mdnahidabrar.VideoCompressor") + ".export."
+    }
+}

@@ -71,6 +71,22 @@
         }
       }
     },
+    "Acknowledgements": {
+      "localizations": {
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "কৃতজ্ঞতা স্বীকার"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agradecimientos"
+          }
+        }
+      }
+    },
     "Activate": {
       "localizations": {
         "bn": {
@@ -713,6 +729,25 @@
           "stringUnit": {
             "state": "translated",
             "value": "Exportar"
+          }
+        }
+      }
+    },
+    "FFmpeg %@": {
+      "shouldTranslate": false
+    },
+    "FFmpeg source code": {
+      "localizations": {
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FFmpeg সোর্স কোড"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código fuente de FFmpeg"
           }
         }
       }
@@ -1781,6 +1816,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vídeo comprimido correctamente"
+          }
+        }
+      }
+    },
+    "Video compression in this app is performed by FFmpeg, which is licensed under the GNU Lesser General Public License, version 2.1 or later. FFmpeg is included as a separate library that can be replaced.": {
+      "localizations": {
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "এই অ্যাপে ভিডিও কম্প্রেশন করে FFmpeg, যা GNU Lesser General Public License, সংস্করণ ২.১ বা তার পরবর্তী সংস্করণের অধীনে লাইসেন্সপ্রাপ্ত। FFmpeg একটি আলাদা লাইব্রেরি হিসেবে যুক্ত, যা প্রতিস্থাপন করা যায়।"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La compresión de vídeo de esta app la realiza FFmpeg, con licencia GNU Lesser General Public License, versión 2.1 o posterior. FFmpeg se incluye como una biblioteca independiente que se puede sustituir."
           }
         }
       }

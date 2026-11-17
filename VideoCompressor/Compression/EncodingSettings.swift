@@ -6,6 +6,8 @@ nonisolated struct EncodingSettings: Hashable, Sendable {
     var width: Int
     /// Encoded height in pixels, before rotation. Always even.
     var height: Int
+    /// Whether the source is shown turned a quarter turn, as portrait iPhone videos are.
+    var isRotated = false
     var frameRate: Double
     /// When set, source frames are dropped so the output keeps this many frames per second.
     var frameRateCap: Double?
@@ -58,6 +60,7 @@ nonisolated struct EncodingSettings: Hashable, Sendable {
         return EncodingSettings(
             width: width,
             height: height,
+            isRotated: metadata.isRotated,
             frameRate: frameRate,
             frameRateCap: needsCap ? preset.maxFrameRate : nil,
             videoBitrate: Int(bitrate.rounded()),

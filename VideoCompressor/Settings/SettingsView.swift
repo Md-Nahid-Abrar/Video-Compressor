@@ -5,6 +5,7 @@ struct SettingsView: View {
     @State private var viewModel = SettingsViewModel()
     @AppStorage(StorageKey.appearance) private var appearance: AppearanceMode = .dark
     @AppStorage(StorageKey.language) private var language: AppLanguage = .english
+    @State private var showsAcknowledgements = false
 
     var body: some View {
         ScreenContainer {
@@ -21,6 +22,9 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .scrollDismissesKeyboard(.interactively)
+        .sheet(isPresented: $showsAcknowledgements) {
+            AcknowledgementsView()
+        }
     }
 
     private var header: some View {
@@ -88,6 +92,13 @@ struct SettingsView: View {
             }
             .accessibilityIdentifier("settings.privacyPolicy")
             .accessibilityHint("Opens in your browser")
+
+            Button {
+                showsAcknowledgements = true
+            } label: {
+                linkLabel("Acknowledgements", symbol: "doc.text.fill")
+            }
+            .accessibilityIdentifier("settings.acknowledgements")
 
             if let url = viewModel.supportURL {
                 Link(destination: url) {

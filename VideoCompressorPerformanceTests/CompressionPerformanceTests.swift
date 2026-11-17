@@ -1,7 +1,7 @@
 import XCTest
 @testable import VideoCompressor
 
-/// Measures the real encoder's speed, CPU and memory on a bundled clip.
+/// Measures the active engine's speed, CPU and memory on a bundled clip.
 final class CompressionPerformanceTests: XCTestCase {
     private var fixtureURL: URL {
         Bundle(for: Self.self).url(forResource: "Fixture", withExtension: "mov")!
@@ -19,7 +19,7 @@ final class CompressionPerformanceTests: XCTestCase {
             Task.detached {
                 do {
                     let destination = try TemporaryFiles.makeExportURL()
-                    _ = try await VideoCompressor().compress(
+                    _ = try await AppConfig.compressionEngine.makeCompressor().compress(
                         source: source,
                         destination: destination,
                         settings: settings,

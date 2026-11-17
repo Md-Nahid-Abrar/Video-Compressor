@@ -1,0 +1,4 @@
+_ffcmd_run
+_ffcmd_cancel
+_ffcmd_copy_log
+_ffcmd_ffmpeg_version

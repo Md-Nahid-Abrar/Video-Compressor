@@ -33,7 +33,7 @@ final class AppServices {
     /// The services used by the shipping app.
     static func live() -> AppServices {
         AppServices(
-            compressor: VideoCompressor(),
+            compressor: AppConfig.compressionEngine.makeCompressor(),
             inspector: VideoInspector(),
             photoSaver: PhotoLibrarySaver(),
             notifier: NotificationService(),

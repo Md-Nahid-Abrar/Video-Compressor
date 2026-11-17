@@ -16,10 +16,19 @@ These work as specified for testing, but each is a likely rejection if submitted
 - [ ] **Privacy Policy link.** It points to a Google Doc in edit mode. Publish a read-only page and use the same URL in App Store Connect.
 - [ ] **Feedback.** Sending opens the user's Mail app addressed to the feedback address; it needs a mail account on the device.
 
+## FFmpeg licence obligations (LGPL 2.1)
+The app embeds FFmpeg as a separate dynamic framework. To stay compliant:
+- [ ] Keep the Acknowledgements screen in Settings, which credits FFmpeg and shows the licence text.
+- [ ] Make the exact source available: the FFmpeg 8.1 release plus this repository's `Scripts/build-ffmpeg.sh` and `Vendor/FFmpegCommand/` (the script contains the small patch applied to FFmpeg). If the repository is private, publish those files somewhere users can reach.
+- [ ] Mention FFmpeg and its licence in the App Store description or support page.
+- [ ] Do not enable GPL or non-free components (for example x264 or x265) in the build script.
+- [ ] After archiving, confirm `FFmpegCmd.framework` is inside the app's `Frameworks` folder and signed with your team.
+
 ## Check on a real iPhone (cannot be tested in the Simulator)
 - [ ] Start an export, leave the app, and confirm it keeps running with the system progress indicator and finishes with the notification. If the export instead fails with the "interrupted" message, tell Claude; the app already falls back safely.
 - [ ] Compress an HDR video shot on the phone and confirm the result still looks HDR in Photos.
 - [ ] Share a result by AirDrop and by a messaging app.
+- [ ] With the FFmpeg engine: compress a long 4K video, an HDR video and a portrait video; confirm speed, orientation and HDR are right, and that Cancel stops it promptly.
 
 ## App Store Connect metadata
 - [ ] Support URL and Privacy Policy URL (both required).
@@ -33,4 +42,4 @@ These work as specified for testing, but each is a likely rejection if submitted
 - Photo library add-only usage string.
 - `BGTaskSchedulerPermittedIdentifiers` and the `processing` background mode for background export.
 - 1024 px app icon without alpha.
-- No third-party code, no network access, no tracking.
+- One third-party component, FFmpeg (LGPL), embedded as a framework. No network access, no tracking.

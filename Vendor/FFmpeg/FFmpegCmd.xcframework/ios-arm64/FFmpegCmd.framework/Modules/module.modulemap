@@ -1,0 +1,4 @@
+framework module FFmpegCmd {
+    umbrella header "FFmpegCmd.h"
+    export *
+}

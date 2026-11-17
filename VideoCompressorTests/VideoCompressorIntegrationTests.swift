@@ -16,8 +16,8 @@ struct VideoCompressorIntegrationTests {
         #expect(FormatValidator.validate(metadata) == nil)
     }
 
-    @Test(arguments: CompressionPreset.allCases)
-    func compressesToSmallerHEVC(preset: CompressionPreset) async throws {
+    @Test(arguments: CompressionEngine.allCases, CompressionPreset.allCases)
+    func compressesToSmallerHEVC(engine: CompressionEngine, preset: CompressionPreset) async throws {
         let source = Fixtures.movieURL
         let inspector = VideoInspector()
         let metadata = try await inspector.inspect(url: source)
@@ -25,7 +25,7 @@ struct VideoCompressorIntegrationTests {
         let destination = try TemporaryFiles.makeExportURL()
         defer { TemporaryFiles.remove(destination) }
 
-        let result = try await VideoCompressor().compress(
+        let result = try await engine.makeCompressor().compress(
             source: source,
             destination: destination,
             settings: settings,
@@ -45,7 +45,8 @@ struct VideoCompressorIntegrationTests {
         #expect(FormatValidator.validate(output) == nil)
     }
 
-    @Test func frameRateCapHalvesFrames() async throws {
+    @Test(arguments: CompressionEngine.allCases)
+    func frameRateCapHalvesFrames(engine: CompressionEngine) async throws {
         let source = try await SampleVideoFactory.makeClip(width: 640, height: 360, frameRate: 60, seconds: 1)
         defer { TemporaryFiles.remove(source) }
         let inspector = VideoInspector()
@@ -56,16 +57,40 @@ struct VideoCompressorIntegrationTests {
         #expect(settings.frameRateCap == 30)
         let destination = try TemporaryFiles.makeExportURL()
         defer { TemporaryFiles.remove(destination) }
-        _ = try await VideoCompressor().compress(source: source, destination: destination, settings: settings, progress: { _ in })
+        _ = try await engine.makeCompressor().compress(source: source, destination: destination, settings: settings, progress: { _ in })
 
         let output = try await inspector.inspect(url: destination)
         #expect(abs(output.frameRate - 30) < 1.5)
     }
 
-    @Test func missingFileFails() async {
+    /// Portrait iPhone videos are stored sideways with a rotation flag. AVFoundation keeps the flag;
+    /// FFmpeg turns the picture upright. Either way the result must display the same as the source.
+    @Test(arguments: CompressionEngine.allCases)
+    func rotatedVideoKeepsItsOrientation(engine: CompressionEngine) async throws {
+        let source = Fixtures.rotatedMovieURL
+        let inspector = VideoInspector()
+        let metadata = try await inspector.inspect(url: source)
+        #expect(metadata.isRotated)
+        #expect(metadata.displaySize == CGSize(width: 360, height: 640))
+
+        let destination = try TemporaryFiles.makeExportURL()
+        defer { TemporaryFiles.remove(destination) }
+        _ = try await engine.makeCompressor().compress(
+            source: source,
+            destination: destination,
+            settings: .make(for: metadata, preset: .medium),
+            progress: { _ in }
+        )
+
+        let output = try await inspector.inspect(url: destination)
+        #expect(output.displaySize == metadata.displaySize)
+    }
+
+    @Test(arguments: CompressionEngine.allCases)
+    func missingFileFails(engine: CompressionEngine) async {
         let destination = URL(fileURLWithPath: NSTemporaryDirectory()).appending(path: "out-\(UUID().uuidString).mp4")
         await #expect(throws: CompressionError.self) {
-            try await VideoCompressor().compress(
+            try await engine.makeCompressor().compress(
                 source: URL(fileURLWithPath: "/nonexistent/video.mov"),
                 destination: destination,
                 settings: .make(for: Fixtures.metadata(), preset: .medium),

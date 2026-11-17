@@ -5,6 +5,11 @@ import Foundation
 final class BundleToken {}
 
 enum Fixtures {
+    /// The same clip flagged as rotated 90°, the way an iPhone stores a portrait recording.
+    static var rotatedMovieURL: URL {
+        Bundle(for: BundleToken.self).url(forResource: "FixtureRotated", withExtension: "mov")!
+    }
+
     static var movieURL: URL {
         Bundle(for: BundleToken.self).url(forResource: "Fixture", withExtension: "mov")!
     }

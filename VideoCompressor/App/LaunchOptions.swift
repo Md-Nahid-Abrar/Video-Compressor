@@ -12,4 +12,8 @@ nonisolated enum LaunchOptions {
     static let useSampleVideo = arguments.contains("-UITestSampleVideo")
     /// "Select Video" loads a generated clip in an unsupported container.
     static let useUnsupportedVideo = arguments.contains("-UITestUnsupportedVideo")
+    /// Premium lasts a few seconds instead of 48 hours, so expiry can be tested.
+    static let shortPremium = arguments.contains("-UITestShortPremium")
+    /// The generated sample clip is portrait (720×1280) instead of landscape.
+    static let usePortraitSample = arguments.contains("-UITestPortraitVideo")
 }

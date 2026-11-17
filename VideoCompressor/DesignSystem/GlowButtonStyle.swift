@@ -30,7 +30,7 @@ private struct GlowButtonBody: View {
 
     private var glowColor: Color {
         switch kind {
-        case .primary, .secondary: Theme.accentBright
+        case .primary, .secondary: Theme.glow
         case .success: Theme.success
         }
     }
@@ -39,8 +39,10 @@ private struct GlowButtonBody: View {
         configuration.label
             .font(.headline.weight(.bold))
             .multilineTextAlignment(.center)
+            .lineLimit(2)
+            .minimumScaleFactor(0.7)
             .foregroundStyle(kind == .secondary ? Theme.textPrimary : Color.white)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 14)
             .frame(maxWidth: .infinity, minHeight: 56)
             .background { background }
             .overlay {

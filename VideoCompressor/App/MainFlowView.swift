@@ -2,12 +2,13 @@ import SwiftUI
 
 /// The navigation stack that hosts Home and everything pushed from it.
 struct MainFlowView: View {
-    let services: AppServices
-    @State private var router = AppRouter()
+    @Environment(AppServices.self) private var services
+    @Environment(AppRouter.self) private var router
 
     var body: some View {
+        @Bindable var router = router
         NavigationStack(path: $router.path) {
-            HomeView(services: services, router: router)
+            HomeView()
                 .navigationDestination(for: Route.self) { route in
                     switch route {
                     case .settings:
@@ -20,8 +21,4 @@ struct MainFlowView: View {
                 }
         }
     }
-}
-
-#Preview {
-    MainFlowView(services: .live())
 }

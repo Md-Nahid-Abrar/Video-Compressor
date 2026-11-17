@@ -13,10 +13,10 @@ struct WelcomeView: View {
                         VStack(spacing: 6) {
                             Text("Compress Video")
                                 .font(.system(.largeTitle, weight: .black))
-                                .foregroundStyle(Theme.textPrimary)
+                                .foregroundStyle(Theme.headline)
                             Text("Without Visible Quality Loss")
                                 .font(.system(.title2, weight: .heavy))
-                                .foregroundStyle(Theme.accentText)
+                                .foregroundStyle(Theme.textPrimary)
                         }
                         .multilineTextAlignment(.center)
                         .accessibilityElement(children: .combine)
@@ -27,7 +27,7 @@ struct WelcomeView: View {
                             compressedText: "20 MB",
                             originalCaption: "1920 × 1080",
                             compressedCaption: "1920 × 1080",
-                            footnote: String(localized: "Example. Results vary by video.")
+                            footnote: String(localized: "Example. Results vary by video.", bundle: L10n.bundle)
                         )
 
                         Text("Shrink videos from your library, then save or share them in a tap.")

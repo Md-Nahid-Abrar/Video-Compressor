@@ -16,11 +16,26 @@ nonisolated struct VideoInspector: VideoInspecting {
     }
 
     @concurrent
-    func thumbnail(for url: URL) async -> CGImage? {
+    func previewFrames(for url: URL, duration: Double) async -> [CGImage] {
         let generator = AVAssetImageGenerator(asset: AVURLAsset(url: url))
         generator.appliesPreferredTrackTransform = true
-        generator.maximumSize = CGSize(width: 480, height: 480)
-        return try? await generator.image(at: .zero).image
+        generator.maximumSize = CGSize(width: 240, height: 240)
+        let tolerance = CMTime(seconds: 0.1, preferredTimescale: 600)
+        generator.requestedTimeToleranceBefore = tolerance
+        generator.requestedTimeToleranceAfter = tolerance
+
+        let frameCount = 16
+        let span = min(max(duration, 0), 4)
+        let times = (0..<frameCount).map {
+            CMTime(seconds: span * Double($0) / Double(frameCount), preferredTimescale: 600)
+        }
+        var frames: [CGImage] = []
+        for await result in generator.images(for: times) {
+            if let image = try? result.image {
+                frames.append(image)
+            }
+        }
+        return frames
     }
 
     private func load(url: URL) async throws -> VideoMetadata {

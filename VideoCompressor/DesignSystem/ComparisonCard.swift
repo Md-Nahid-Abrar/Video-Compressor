@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Before/after sizes side by side, joined by a green arrow.
+/// Before/after sizes side by side, joined by a green arrow centered on the two size pills.
 struct ComparisonCard: View {
     let originalText: String
     let compressedText: String
@@ -8,19 +8,28 @@ struct ComparisonCard: View {
     var compressedCaption: String?
     var footnote: String?
     var compressedIsPlaceholder = false
+    var isCompact = false
 
     var body: some View {
-        GlassCard {
-            VStack(spacing: 12) {
-                HStack(alignment: .center, spacing: 10) {
+        GlassCard(padding: isCompact ? 12 : 18) {
+            VStack(spacing: isCompact ? 6 : 12) {
+                // Aligning on the pills' center line keeps the arrow level with them,
+                // whatever sits above or below.
+                HStack(alignment: .pillCenter, spacing: 10) {
                     column(title: "Original", value: originalText, caption: originalCaption, prominent: true)
-                    Image(systemName: "arrow.right")
+                    Image(systemName: "arrow.forward")
                         .font(.headline.weight(.heavy))
                         .foregroundStyle(.white)
                         .frame(width: 36, height: 36)
                         .background(Theme.arrowGreen, in: .circle)
+                        .alignmentGuide(.pillCenter) { $0[VerticalAlignment.center] }
                         .accessibilityHidden(true)
-                    column(title: "Compressed", value: compressedText, caption: compressedCaption, prominent: !compressedIsPlaceholder)
+                    column(
+                        title: "Compressed",
+                        value: compressedText,
+                        caption: compressedCaption,
+                        prominent: !compressedIsPlaceholder
+                    )
                 }
                 if let footnote {
                     Text(footnote)
@@ -34,11 +43,14 @@ struct ComparisonCard: View {
     }
 
     private func column(title: LocalizedStringKey, value: String, caption: String?, prominent: Bool) -> some View {
-        VStack(spacing: 8) {
+        VStack(spacing: isCompact ? 5 : 8) {
             Text(title)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.textPrimary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
             SizePill(text: value, isProminent: prominent)
+                .alignmentGuide(.pillCenter) { $0[VerticalAlignment.center] }
             if let caption {
                 Text(caption)
                     .font(.caption.weight(.medium))
@@ -49,6 +61,17 @@ struct ComparisonCard: View {
         }
         .frame(maxWidth: .infinity)
     }
+}
+
+private extension VerticalAlignment {
+    /// The vertical center of the size pills.
+    enum PillCenter: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.center]
+        }
+    }
+
+    static let pillCenter = VerticalAlignment(PillCenter.self)
 }
 
 #Preview {

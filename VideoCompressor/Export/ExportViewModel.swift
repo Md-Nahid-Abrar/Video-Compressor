@@ -78,7 +78,7 @@ final class ExportViewModel {
         guard !Task.isCancelled else { return }
 
         continuesInBackground = services.background.begin(
-            title: String(localized: "Compressing video"),
+            title: String(localized: "Compressing video", bundle: L10n.bundle),
             subtitle: request.preset.fullTitle,
             onExpire: { [weak self] in
                 self?.stoppedBySystem = true
@@ -112,7 +112,7 @@ final class ExportViewModel {
             if error == .cancelled {
                 // A user cancel leaves the screen; only a system stop needs explaining.
                 guard stoppedBySystem else { return }
-                phase = .failed(String(localized: "Compression was stopped before it finished. Try again."))
+                phase = .failed(String(localized: "Compression was stopped before it finished. Try again.", bundle: L10n.bundle))
             } else {
                 phase = .failed(error.message)
             }

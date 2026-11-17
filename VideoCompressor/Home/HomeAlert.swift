@@ -7,8 +7,8 @@ nonisolated enum HomeAlert: Hashable, Sendable {
 
     var title: String {
         switch self {
-        case .rejected: String(localized: "Unsupported Video")
-        case .loadFailed: String(localized: "Couldn't Load Video")
+        case .rejected: String(localized: "Unsupported Video", bundle: L10n.bundle)
+        case .loadFailed: String(localized: "Couldn't Load Video", bundle: L10n.bundle)
         }
     }
 

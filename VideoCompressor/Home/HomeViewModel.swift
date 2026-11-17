@@ -108,13 +108,13 @@ final class HomeViewModel {
                 alert = .rejected(rejection)
                 return
             }
-            let thumbnail = await services.inspector.thumbnail(for: url)
+            let frames = await services.inspector.previewFrames(for: url, duration: metadata.duration)
             guard !Task.isCancelled else {
                 TemporaryFiles.remove(url)
                 return
             }
             TemporaryFiles.remove(selection?.url)
-            selection = SelectedVideo(url: url, metadata: metadata, thumbnail: thumbnail)
+            selection = SelectedVideo(url: url, metadata: metadata, frames: frames)
         } catch {
             TemporaryFiles.remove(importedURL)
             guard !Task.isCancelled else { return }

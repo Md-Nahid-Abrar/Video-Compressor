@@ -19,12 +19,11 @@ struct ExportView: View {
                 case .compressing:
                     compressingContent
                 case .finished(let result):
-                    finishedContent(result)
+                    ExportResultView(result: result, viewModel: viewModel)
                 case .failed(let message):
                     failedContent(message)
                 }
             }
-            .padding(.top, 12)
             .animation(.smooth, value: viewModel.phase)
         }
         .navigationTitle(title)
@@ -82,22 +81,22 @@ struct ExportView: View {
         VStack(spacing: 24) {
             Image(systemName: "arrow.down.right.and.arrow.up.left")
                 .font(.system(size: 44, weight: .bold))
-                .foregroundStyle(Theme.accentText)
+                .foregroundStyle(Theme.accent)
                 .symbolEffect(.pulse, options: .repeating)
                 .accessibilityHidden(true)
 
             Text("Compressing Your Video")
                 .font(.system(.title, weight: .black))
-                .foregroundStyle(Theme.textPrimary)
+                .foregroundStyle(Theme.headline)
                 .multilineTextAlignment(.center)
 
             GlassCard {
                 VStack(spacing: 12) {
                     ProgressView(value: viewModel.progress)
-                        .tint(Theme.accentBright)
+                        .tint(Theme.buttonEnd)
                         .scaleEffect(y: 2, anchor: .center)
                         .accessibilityIdentifier("export.progress")
-                    Text(viewModel.progress.formatted(.percent.precision(.fractionLength(0))))
+                    Text(viewModel.progress.formattedPercent)
                         .font(.system(.title2, design: .rounded, weight: .heavy))
                         .monospacedDigit()
                         .foregroundStyle(Theme.textPrimary)
@@ -135,72 +134,6 @@ struct ExportView: View {
         .accessibilityIdentifier("export.warning")
     }
 
-    // MARK: - Finished
-
-    private func finishedContent(_ result: CompressionResult) -> some View {
-        VStack(spacing: 24) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 64))
-                .foregroundStyle(Theme.success)
-                .symbolEffect(.bounce, value: result)
-                .accessibilityHidden(true)
-
-            Text("Video Compressed")
-                .font(.system(.title, weight: .black))
-                .foregroundStyle(Theme.textPrimary)
-                .accessibilityIdentifier("export.finishedTitle")
-
-            ComparisonCard(
-                originalText: result.originalBytes.formattedFileSize,
-                compressedText: result.compressedBytes.formattedFileSize,
-                footnote: reductionText(result)
-            )
-
-            VStack(spacing: 12) {
-                saveButton
-                ShareLink(item: result.outputURL) {
-                    Label("Share with Others", systemImage: "square.and.arrow.up")
-                }
-                .buttonStyle(.glow(.secondary))
-                .accessibilityIdentifier("export.share")
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var saveButton: some View {
-        switch viewModel.saveState {
-        case .idle:
-            Button("Save to Photos", systemImage: "square.and.arrow.down") {
-                Task { await viewModel.saveToPhotos() }
-            }
-            .buttonStyle(.glow)
-            .accessibilityIdentifier("export.save")
-        case .saving:
-            Button {} label: {
-                HStack(spacing: 10) {
-                    ProgressView().tint(.white)
-                    Text("Saving…")
-                }
-            }
-            .buttonStyle(.glow)
-            .disabled(true)
-        case .saved:
-            Button("Saved to Photos", systemImage: "checkmark") {}
-                .buttonStyle(.glow(.success))
-                .allowsHitTesting(false)
-                .accessibilityIdentifier("export.saved")
-        }
-    }
-
-    private func reductionText(_ result: CompressionResult) -> String {
-        guard result.reduction > 0 else {
-            return String(localized: "This video was already well compressed.")
-        }
-        let percent = result.reduction.formatted(.percent.precision(.fractionLength(0)))
-        return String(localized: "\(percent) smaller")
-    }
-
     // MARK: - Failed
 
     private func failedContent(_ message: String) -> some View {
@@ -212,7 +145,7 @@ struct ExportView: View {
 
             Text("Something Went Wrong")
                 .font(.system(.title, weight: .black))
-                .foregroundStyle(Theme.textPrimary)
+                .foregroundStyle(Theme.headline)
                 .multilineTextAlignment(.center)
 
             GlassCard {

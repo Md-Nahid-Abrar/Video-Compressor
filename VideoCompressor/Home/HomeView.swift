@@ -3,27 +3,15 @@ import SwiftUI
 
 /// The main screen: pick a video, choose a compression level, see the estimate.
 struct HomeView: View {
-    @State private var viewModel: HomeViewModel
-    private let router: AppRouter
-
-    init(services: AppServices, router: AppRouter) {
-        _viewModel = State(initialValue: HomeViewModel(services: services))
-        self.router = router
-    }
+    @Environment(HomeViewModel.self) private var viewModel
+    @Environment(AppRouter.self) private var router
+    @State private var isPromoPresented = false
 
     var body: some View {
+        @Bindable var viewModel = viewModel
         ScreenContainer {
-            VStack(spacing: 24) {
-                VStack(spacing: 2) {
-                    Text("Compress")
-                        .foregroundStyle(Theme.textPrimary)
-                    Text("Your Video")
-                        .foregroundStyle(Theme.accentText)
-                }
-                .font(.system(.largeTitle, weight: .black))
-                .multilineTextAlignment(.center)
-                .accessibilityElement(children: .combine)
-                .accessibilityAddTraits(.isHeader)
+            VStack(spacing: 22) {
+                PremiumStatusField()
 
                 VideoPickerSection(
                     selection: viewModel.selection,
@@ -54,21 +42,16 @@ struct HomeView: View {
                 )
             }
         }
-        .navigationTitle("Video Compressor")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button("Profile", systemImage: "person.crop.circle") {
-                    router.push(.profile)
-                }
-                .accessibilityIdentifier("home.profile")
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Settings", systemImage: "gearshape") {
-                    router.push(.settings)
-                }
-                .accessibilityIdentifier("home.settings")
-            }
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .bottom) {
+            HomeBottomBar(
+                onSettings: { router.push(.settings) },
+                onPremium: { isPromoPresented = true },
+                onProfile: { router.push(.profile) }
+            )
+        }
+        .sheet(isPresented: $isPromoPresented) {
+            PromoCodeSheet()
         }
         .photosPicker(
             isPresented: $viewModel.isPickerPresented,
@@ -86,11 +69,5 @@ struct HomeView: View {
         } message: { alert in
             Text(alert.message)
         }
-    }
-}
-
-#Preview {
-    NavigationStack {
-        HomeView(services: .live(), router: AppRouter())
     }
 }

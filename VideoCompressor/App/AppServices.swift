@@ -48,7 +48,14 @@ final class AppServices {
             return { try await SampleVideoFactory.makeClip(kind: .unsupportedContainer) }
         }
         if LaunchOptions.useSampleVideo {
-            return { try await SampleVideoFactory.makeClip(kind: .supported) }
+            let isPortrait = LaunchOptions.usePortraitSample
+            return {
+                try await SampleVideoFactory.makeClip(
+                    kind: .supported,
+                    width: isPortrait ? 720 : 1280,
+                    height: isPortrait ? 1280 : 720
+                )
+            }
         }
         #endif
         return nil

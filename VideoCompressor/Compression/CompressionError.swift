@@ -12,17 +12,17 @@ nonisolated enum CompressionError: Error, Hashable, Sendable {
     var message: String {
         switch self {
         case .unreadable:
-            String(localized: "This video couldn't be opened. Try choosing it again.")
+            String(localized: "This video couldn't be opened. Try choosing it again.", bundle: L10n.bundle)
         case .noVideoTrack:
-            String(localized: "This file doesn't contain any video.")
+            String(localized: "This file doesn't contain any video.", bundle: L10n.bundle)
         case .insufficientSpace:
-            String(localized: "There isn't enough free storage to compress this video. Free up some space and try again.")
+            String(localized: "There isn't enough free storage to compress this video. Free up some space and try again.", bundle: L10n.bundle)
         case .interrupted:
-            String(localized: "Compression was interrupted because the app left the foreground. Keep the app open and try again.")
+            String(localized: "Compression was interrupted because the app left the foreground. Keep the app open and try again.", bundle: L10n.bundle)
         case .cancelled:
-            String(localized: "Compression was cancelled.")
+            String(localized: "Compression was cancelled.", bundle: L10n.bundle)
         case .failed(let reason):
-            String(localized: "Compression failed. \(reason)")
+            String(localized: "Compression failed. \(reason)", bundle: L10n.bundle)
         }
     }
 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Section 1: choose a video, then see what was chosen.
+/// Section 1: choose a video, then see an animated preview, its size and its details.
 struct VideoPickerSection: View {
     let selection: SelectedVideo?
     let isLoading: Bool
@@ -29,7 +29,7 @@ struct VideoPickerSection: View {
                         Text("Select Video")
                         Text("Choose from your Photos library")
                             .font(.footnote.weight(.regular))
-                            .opacity(0.85)
+                            .opacity(0.9)
                     }
                     .padding(.vertical, 14)
                 }
@@ -40,20 +40,25 @@ struct VideoPickerSection: View {
     }
 
     private func selectedCard(_ selection: SelectedVideo) -> some View {
-        GlassCard {
-            VStack(spacing: 14) {
-                HStack(spacing: 14) {
-                    thumbnail(selection)
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(selection.metadata.fileSize.formattedFileSize)
-                            .font(.title3.weight(.bold))
-                            .foregroundStyle(Theme.textPrimary)
-                        Text(detailText(selection.metadata))
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.textSecondary)
-                        Text(durationText(selection.metadata))
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.textSecondary)
+        let metadata = selection.metadata
+        return GlassCard(padding: 14) {
+            VStack(spacing: 12) {
+                // Three columns: animated preview, file size, details.
+                HStack(alignment: .center, spacing: 10) {
+                    AnimatedPreview(frames: selection.frames)
+
+                    Text(metadata.fileSize.formattedFileSize)
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(Theme.textPrimary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .fixedSize(horizontal: true, vertical: false)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        detail("Resolution:", resolutionText(metadata))
+                        detail("Frame rate:", frameRateText(metadata))
+                        detail("Duration:", durationText(metadata))
+                        detail("File Format:", metadata.formatName)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -67,34 +72,30 @@ struct VideoPickerSection: View {
         }
     }
 
-    @ViewBuilder
-    private func thumbnail(_ selection: SelectedVideo) -> some View {
-        let shape = RoundedRectangle(cornerRadius: 14, style: .continuous)
-        Group {
-            if let image = selection.thumbnail {
-                Image(decorative: image, scale: 1)
-                    .resizable()
-                    .scaledToFill()
-            } else {
-                Image(systemName: "film")
-                    .font(.title)
-                    .foregroundStyle(Theme.textSecondary)
-            }
+    private func detail(_ label: LocalizedStringKey, _ value: String) -> some View {
+        HStack(spacing: 4) {
+            Text(label)
+                .foregroundStyle(Theme.textSecondary)
+            Text(verbatim: value)
+                .fontWeight(.semibold)
+                .foregroundStyle(Theme.textPrimary)
         }
-        .frame(width: 96, height: 96)
-        .background(Theme.cardFill)
-        .clipShape(shape)
-        .overlay { shape.strokeBorder(Theme.cardStroke, lineWidth: 1) }
+        .font(.caption)
+        .lineLimit(1)
+        .minimumScaleFactor(0.65)
     }
 
-    private func detailText(_ metadata: VideoMetadata) -> String {
+    private func resolutionText(_ metadata: VideoMetadata) -> String {
         let size = metadata.displaySize
-        let fps = Int(metadata.frameRate.rounded())
-        return "\(Int(size.width)) × \(Int(size.height)) · \(fps) fps"
+        return "\(Int(size.width)) × \(Int(size.height))"
+    }
+
+    private func frameRateText(_ metadata: VideoMetadata) -> String {
+        String(localized: "\(Int(metadata.frameRate.rounded())) fps", bundle: L10n.bundle)
     }
 
     private func durationText(_ metadata: VideoMetadata) -> String {
-        Duration.seconds(metadata.duration).formatted(.time(pattern: .minuteSecond))
+        Duration.seconds(metadata.duration).formatted(.time(pattern: .minuteSecond).locale(L10n.locale))
     }
 }
 

@@ -1,0 +1,1874 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " " : {
+      "shouldTranslate" : false
+    },
+    "%@ smaller" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصغر بنسبة %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ছোট"
+          }
+        }
+      }
+    },
+    "%lld fps" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld إطار/ث"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld fps"
+          }
+        }
+      }
+    },
+    "%lld stars" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld نجوم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld তারা"
+          }
+        }
+      }
+    },
+    "≈ %@" : {
+      "shouldTranslate" : false
+    },
+    "000" : {
+      "shouldTranslate" : false
+    },
+    "About %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حوالي %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রায় %@"
+          }
+        }
+      }
+    },
+    "About %@ smaller" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصغر بنحو %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রায় %@ ছোট"
+          }
+        }
+      }
+    },
+    "Activate" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تفعيل"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সক্রিয় করুন"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المظهر"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অ্যাপিয়ারেন্স"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إلغاء"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "বাতিল"
+          }
+        }
+      }
+    },
+    "Cancel Compression" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إلغاء الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন বাতিল করুন"
+          }
+        }
+      }
+    },
+    "Cancel compression?" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هل تريد إلغاء الضغط؟"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন বাতিল করবেন?"
+          }
+        }
+      }
+    },
+    "Change compression" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تغيير الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন পরিবর্তন"
+          }
+        }
+      }
+    },
+    "Change Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تغيير الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও পরিবর্তন করুন"
+          }
+        }
+      }
+    },
+    "Choose a compression level to see the estimate." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر مستوى الضغط لعرض الحجم التقديري."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আনুমানিক আকার দেখতে একটি কম্প্রেশন লেভেল বেছে নিন।"
+          }
+        }
+      }
+    },
+    "Choose Another Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر فيديو آخر"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অন্য ভিডিও বেছে নিন"
+          }
+        }
+      }
+    },
+    "Choose from your Photos library" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر من مكتبة الصور"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার ফটো লাইব্রেরি থেকে বেছে নিন"
+          }
+        }
+      }
+    },
+    "Compress Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও কম্প্রেস করুন"
+          }
+        }
+      }
+    },
+    "Compressed" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بعد الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেসড"
+          }
+        }
+      }
+    },
+    "Compressing" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেস হচ্ছে"
+          }
+        }
+      }
+    },
+    "Compressing video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ ضغط الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও কম্প্রেস হচ্ছে"
+          }
+        }
+      }
+    },
+    "Compressing Your Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ ضغط الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার ভিডিও কম্প্রেস হচ্ছে"
+          }
+        }
+      }
+    },
+    "Compression Failed" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فشل الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন ব্যর্থ হয়েছে"
+          }
+        }
+      }
+    },
+    "Compression failed. %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فشل الضغط. %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন ব্যর্থ হয়েছে। %@"
+          }
+        }
+      }
+    },
+    "Compression Level" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مستوى الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন লেভেল"
+          }
+        }
+      }
+    },
+    "Compression was cancelled." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم إلغاء الضغط."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন বাতিল করা হয়েছে।"
+          }
+        }
+      }
+    },
+    "Compression was interrupted because the app left the foreground. Keep the app open and try again." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توقف الضغط لأن التطبيق لم يعد في الواجهة. أبقِ التطبيق مفتوحًا وحاول مرة أخرى."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অ্যাপটি সামনে না থাকায় কম্প্রেশন বন্ধ হয়ে গেছে। অ্যাপ খোলা রেখে আবার চেষ্টা করুন।"
+          }
+        }
+      }
+    },
+    "Compression was stopped before it finished. Try again." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توقف الضغط قبل اكتماله. حاول مرة أخرى."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "শেষ হওয়ার আগেই কম্প্রেশন বন্ধ হয়ে গেছে। আবার চেষ্টা করুন।"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "চালিয়ে যান"
+          }
+        }
+      }
+    },
+    "Copy Invite Link" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسخ رابط الدعوة"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আমন্ত্রণ লিংক কপি করুন"
+          }
+        }
+      }
+    },
+    "Couldn't Load Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر تحميل الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও লোড করা যায়নি"
+          }
+        }
+      }
+    },
+    "Couldn't Save Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر حفظ الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও সেভ করা যায়নি"
+          }
+        }
+      }
+    },
+    "Dark" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "داكن"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ডার্ক"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সম্পন্ন"
+          }
+        }
+      }
+    },
+    "Duration:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المدة:"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সময়কাল:"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "البريد الإلكتروني"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ইমেইল"
+          }
+        }
+      }
+    },
+    "Enter a valid email address" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل عنوان بريد إلكتروني صالحًا"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "একটি সঠিক ইমেইল ঠিকানা লিখুন"
+          }
+        }
+      }
+    },
+    "Enter Promo Code" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل الرمز الترويجي"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রোমো কোড লিখুন"
+          }
+        }
+      }
+    },
+    "Enter your 3-digit code to unlock Premium for 48 hours." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل الرمز المكوّن من 3 أرقام لتفعيل بريميوم لمدة 48 ساعة."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "৪৮ ঘণ্টার জন্য প্রিমিয়াম চালু করতে আপনার ৩ সংখ্যার কোড লিখুন।"
+          }
+        }
+      }
+    },
+    "Estimated Size" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحجم التقديري"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আনুমানিক আকার"
+          }
+        }
+      }
+    },
+    "Example. Results vary by video." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مثال. تختلف النتائج حسب الفيديو."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "উদাহরণ। ভিডিওভেদে ফলাফল ভিন্ন হতে পারে।"
+          }
+        }
+      }
+    },
+    "Expires in %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ينتهي خلال %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মেয়াদ শেষ হবে %@"
+          }
+        }
+      }
+    },
+    "Export" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تصدير"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এক্সপোর্ট"
+          }
+        }
+      }
+    },
+    "Feedback" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الملاحظات"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মতামত"
+          }
+        }
+      }
+    },
+    "File Format:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صيغة الملف:"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ফাইল ফরম্যাট:"
+          }
+        }
+      }
+    },
+    "Frame rate:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معدل الإطارات:"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ফ্রেম রেট:"
+          }
+        }
+      }
+    },
+    "Hardware Acceleration" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسريع العتاد"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "হার্ডওয়্যার অ্যাক্সিলারেশন"
+          }
+        }
+      }
+    },
+    "High" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عالٍ"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "হাই"
+          }
+        }
+      }
+    },
+    "High compression" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ضغط عالٍ"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "হাই কম্প্রেশন"
+          }
+        }
+      }
+    },
+    "Invite Others" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ادعُ الآخرين"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অন্যদের আমন্ত্রণ জানান"
+          }
+        }
+      }
+    },
+    "Keep Compressing" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة الضغط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেস চালিয়ে যান"
+          }
+        }
+      }
+    },
+    "Keep the app open and on screen until this finishes, or compression will stop." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أبقِ التطبيق مفتوحًا وظاهرًا على الشاشة حتى ينتهي، وإلا سيتوقف الضغط."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "শেষ না হওয়া পর্যন্ত অ্যাপটি খোলা ও স্ক্রিনে রাখুন, নইলে কম্প্রেশন বন্ধ হয়ে যাবে।"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اللغة"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভাষা"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاتح"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লাইট"
+          }
+        }
+      }
+    },
+    "Link Copied" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم نسخ الرابط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লিংক কপি হয়েছে"
+          }
+        }
+      }
+    },
+    "Low" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منخفض"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লো"
+          }
+        }
+      }
+    },
+    "Low compression" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ضغط منخفض"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লো কম্প্রেশন"
+          }
+        }
+      }
+    },
+    "Mail Isn't Set Up" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "البريد غير مُعدّ"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মেইল সেট আপ করা নেই"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متوسط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মিডিয়াম"
+          }
+        }
+      }
+    },
+    "Medium compression" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ضغط متوسط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মিডিয়াম কম্প্রেশন"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاسم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "নাম"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "موافق"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ঠিক আছে"
+          }
+        }
+      }
+    },
+    "Open Settings" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فتح الإعدادات"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সেটিংস খুলুন"
+          }
+        }
+      }
+    },
+    "Opens a new email" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يفتح رسالة بريد جديدة"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "নতুন ইমেইল খোলে"
+          }
+        }
+      }
+    },
+    "Opens in your browser" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُفتح في المتصفح"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার ব্রাউজারে খোলে"
+          }
+        }
+      }
+    },
+    "Original" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأصلي"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অরিজিনাল"
+          }
+        }
+      }
+    },
+    "Pause" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إيقاف مؤقت"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "পজ"
+          }
+        }
+      }
+    },
+    "Play" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تشغيل"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্লে"
+          }
+        }
+      }
+    },
+    "Plays both videos at the same time" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يشغّل الفيديوين في الوقت نفسه"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "দুটি ভিডিও একসাথে চালায়"
+          }
+        }
+      }
+    },
+    "Premium" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بريميوم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রিমিয়াম"
+          }
+        }
+      }
+    },
+    "Premium Is Active" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بريميوم مفعّل"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রিমিয়াম চালু আছে"
+          }
+        }
+      }
+    },
+    "Preparing video…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ تجهيز الفيديو…"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও প্রস্তুত হচ্ছে…"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سياسة الخصوصية"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "গোপনীয়তা নীতি"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الملف الشخصي"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রোফাইল"
+          }
+        }
+      }
+    },
+    "Progress so far will be lost." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سيُفقد التقدّم الحالي."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এ পর্যন্ত হওয়া অগ্রগতি হারিয়ে যাবে।"
+          }
+        }
+      }
+    },
+    "Promo code" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرمز الترويجي"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রোমো কোড"
+          }
+        }
+      }
+    },
+    "Provide Rating" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قيّم التطبيق"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "রেটিং দিন"
+          }
+        }
+      }
+    },
+    "Resolution:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الدقة:"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "রেজোলিউশন:"
+          }
+        }
+      }
+    },
+    "Running on GPU for faster processing time" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعمل على معالج الرسوميات لمعالجة أسرع"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "দ্রুত প্রসেসিংয়ের জন্য GPU-তে চলছে"
+          }
+        }
+      }
+    },
+    "Save to Photos" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حفظ في الصور"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ফটোতে সেভ করুন"
+          }
+        }
+      }
+    },
+    "Saved on this device only" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "محفوظ على هذا الجهاز فقط"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "শুধু এই ডিভাইসে সংরক্ষিত"
+          }
+        }
+      }
+    },
+    "Saved to Photos" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم الحفظ في الصور"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ফটোতে সেভ হয়েছে"
+          }
+        }
+      }
+    },
+    "Saving…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ الحفظ…"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সেভ হচ্ছে…"
+          }
+        }
+      }
+    },
+    "Select a video to choose a compression level." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر فيديو لتحديد مستوى الضغط."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কম্প্রেশন লেভেল বেছে নিতে একটি ভিডিও নির্বাচন করুন।"
+          }
+        }
+      }
+    },
+    "Select a video to see how much space you'll save." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر فيديو لمعرفة المساحة التي ستوفّرها."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কতটা জায়গা বাঁচবে তা দেখতে একটি ভিডিও নির্বাচন করুন।"
+          }
+        }
+      }
+    },
+    "Select Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر فيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও নির্বাচন করুন"
+          }
+        }
+      }
+    },
+    "Send Feedback" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إرسال الملاحظات"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মতামত পাঠান"
+          }
+        }
+      }
+    },
+    "Set up an email account on this device, or write to %@." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أعدّ حساب بريد إلكتروني على هذا الجهاز، أو راسلنا على %@."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ডিভাইসে একটি ইমেইল অ্যাকাউন্ট সেট আপ করুন, অথবা %@ ঠিকানায় লিখুন।"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإعدادات"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সেটিংস"
+          }
+        }
+      }
+    },
+    "Share with Others" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مشاركة مع الآخرين"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অন্যদের সাথে শেয়ার করুন"
+          }
+        }
+      }
+    },
+    "Shrink videos from your library, then save or share them in a tap." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "صغّر حجم فيديوهات مكتبتك، ثم احفظها أو شاركها بنقرة واحدة."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লাইব্রেরির ভিডিও ছোট করুন, তারপর এক ট্যাপে সেভ বা শেয়ার করুন।"
+          }
+        }
+      }
+    },
+    "Something Went Wrong" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حدث خطأ ما"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কিছু একটা সমস্যা হয়েছে"
+          }
+        }
+      }
+    },
+    "Submit Rating" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إرسال التقييم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "রেটিং জমা দিন"
+          }
+        }
+      }
+    },
+    "Support" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الدعم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সাপোর্ট"
+          }
+        }
+      }
+    },
+    "Switches between light and dark mode" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يبدّل بين الوضع الفاتح والداكن"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লাইট ও ডার্ক মোডের মধ্যে বদল করে"
+          }
+        }
+      }
+    },
+    "Tell us what you think…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أخبرنا برأيك…"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার মতামত জানান…"
+          }
+        }
+      }
+    },
+    "That code isn't valid. Try again." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الرمز غير صالح. حاول مرة أخرى."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কোডটি সঠিক নয়। আবার চেষ্টা করুন।"
+          }
+        }
+      }
+    },
+    "The encoder stopped unexpectedly." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توقّف المُرمِّز بشكل غير متوقع."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এনকোডার অপ্রত্যাশিতভাবে বন্ধ হয়ে গেছে।"
+          }
+        }
+      }
+    },
+    "The video couldn't be saved. %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر حفظ الفيديو. %@"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিওটি সেভ করা যায়নি। %@"
+          }
+        }
+      }
+    },
+    "There isn't enough free storage to compress this video. Free up some space and try again." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا توجد مساحة تخزين كافية لضغط هذا الفيديو. أفرغ بعض المساحة وحاول مرة أخرى."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ভিডিও কম্প্রেস করার মতো যথেষ্ট ফাঁকা জায়গা নেই। কিছু জায়গা খালি করে আবার চেষ্টা করুন।"
+          }
+        }
+      }
+    },
+    "this" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই"
+          }
+        }
+      }
+    },
+    "This file doesn't contain any video." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الملف لا يحتوي على أي فيديو."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ফাইলে কোনো ভিডিও নেই।"
+          }
+        }
+      }
+    },
+    "This file doesn't contain any video. Choose a different video." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الملف لا يحتوي على أي فيديو. اختر فيديو آخر."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ফাইলে কোনো ভিডিও নেই। অন্য একটি ভিডিও বেছে নিন।"
+          }
+        }
+      }
+    },
+    "This video couldn't be opened. Try choosing it again." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر فتح هذا الفيديو. حاول اختياره مرة أخرى."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিওটি খোলা যায়নি। আবার বেছে নেওয়ার চেষ্টা করুন।"
+          }
+        }
+      }
+    },
+    "This video is copy-protected and can't be compressed. Choose a different video." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الفيديو محمي ضد النسخ ولا يمكن ضغطه. اختر فيديو آخر."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ভিডিওটি কপি-সুরক্ষিত, তাই কম্প্রেস করা যাবে না। অন্য একটি ভিডিও বেছে নিন।"
+          }
+        }
+      }
+    },
+    "This video isn't encoded with H.264 or HEVC. Choose an MP4, MOV or M4V video that uses one of those formats." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الفيديو غير مرمّز بصيغة H.264 أو HEVC. اختر فيديو MP4 أو MOV أو M4V يستخدم إحدى هاتين الصيغتين."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ভিডিওটি H.264 বা HEVC দিয়ে এনকোড করা নয়। এই ফরম্যাটগুলোর একটি ব্যবহার করে এমন MP4, MOV বা M4V ভিডিও বেছে নিন।"
+          }
+        }
+      }
+    },
+    "This video was already well compressed." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الفيديو مضغوط جيدًا من قبل."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এই ভিডিওটি আগে থেকেই ভালোভাবে কম্প্রেস করা ছিল।"
+          }
+        }
+      }
+    },
+    "Try Again" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حاول مرة أخرى"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আবার চেষ্টা করুন"
+          }
+        }
+      }
+    },
+    "Unsupported Video" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فيديو غير مدعوم"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অসমর্থিত ভিডিও"
+          }
+        }
+      }
+    },
+    "Version %@ (%@)" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإصدار %1$@ (%2$@)"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সংস্করণ %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "Video Compressed" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم ضغط الفيديو"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও কম্প্রেস হয়েছে"
+          }
+        }
+      }
+    },
+    "Video compressed successfully" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم ضغط الفيديو بنجاح"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ভিডিও সফলভাবে কম্প্রেস হয়েছে"
+          }
+        }
+      }
+    },
+    "Video Compressor doesn't have permission to add videos to your photo library. You can allow it in Settings." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يملك Video Compressor إذنًا لإضافة الفيديوهات إلى مكتبة الصور. يمكنك السماح بذلك من الإعدادات."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার ফটো লাইব্রেরিতে ভিডিও যোগ করার অনুমতি Video Compressor-এর নেই। সেটিংস থেকে অনুমতি দিতে পারেন।"
+          }
+        }
+      }
+    },
+    "Videos in %@ format aren't supported. Choose an MP4, MOV or M4V video." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفيديوهات بصيغة %@ غير مدعومة. اختر فيديو MP4 أو MOV أو M4V."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ফরম্যাটের ভিডিও সমর্থিত নয়। একটি MP4, MOV বা M4V ভিডিও বেছে নিন।"
+          }
+        }
+      }
+    },
+    "Without Visible Quality Loss" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "دون فقدان ملحوظ في الجودة"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "চোখে পড়ার মতো মান না হারিয়ে"
+          }
+        }
+      }
+    },
+    "You can leave the app while this finishes, but don't force-quit it or compression will stop." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمكنك مغادرة التطبيق أثناء اكتمال العملية، لكن لا تغلقه إجباريًا وإلا سيتوقف الضغط."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "এটি শেষ হওয়ার সময় আপনি অ্যাপ থেকে বেরিয়ে যেতে পারেন, তবে জোর করে বন্ধ করবেন না, নইলে কম্প্রেশন থেমে যাবে।"
+          }
+        }
+      }
+    },
+    "you@example.com" : {
+      "shouldTranslate" : false
+    },
+    "Your Name" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسمك"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার নাম"
+          }
+        }
+      }
+    },
+    "Your video is ready to save or share." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفيديو جاهز للحفظ أو المشاركة."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার ভিডিও সেভ বা শেয়ার করার জন্য প্রস্তুত।"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

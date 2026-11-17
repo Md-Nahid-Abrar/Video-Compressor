@@ -5,5 +5,6 @@ import Foundation
 struct SelectedVideo {
     var url: URL
     var metadata: VideoMetadata
-    var thumbnail: CGImage?
+    /// Frames cycled to make the animated preview.
+    var frames: [CGImage]
 }

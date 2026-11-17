@@ -104,7 +104,7 @@ nonisolated struct VideoCompressor: VideoCompressing {
 
         await writer.finishWriting()
         guard writer.status == .completed else {
-            throw writer.error ?? CompressionError.failed(String(localized: "The encoder stopped unexpectedly."))
+            throw writer.error ?? CompressionError.failed(String(localized: "The encoder stopped unexpectedly.", bundle: L10n.bundle))
         }
         progress(1)
 

@@ -21,7 +21,7 @@ struct ProfileView: View {
                     .font(.system(size: 92))
                     .symbolRenderingMode(.palette)
                     .foregroundStyle(.white, Theme.primaryGradient)
-                    .shadow(color: Theme.accentBright.opacity(0.5), radius: 16)
+                    .shadow(color: Theme.glow.opacity(0.5), radius: 16)
                     .padding(.top, 12)
                     .accessibilityHidden(true)
 

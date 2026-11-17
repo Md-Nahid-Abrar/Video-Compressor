@@ -40,4 +40,16 @@ nonisolated struct VideoMetadata: Hashable, Sendable {
         guard duration > 0 else { return 0 }
         return max(Double(fileSize) * 8 / duration - (audio?.bitrate ?? 0), 0)
     }
+
+    /// Container and codec for display, such as "MOV · H.264".
+    var formatName: String {
+        let codecName = switch codec.lowercased() {
+        case "avc1", "avc3": "H.264"
+        case "hvc1", "hev1": "HEVC"
+        case "dvh1", "dvhe": "Dolby Vision"
+        default: codec.uppercased()
+        }
+        let container = containerExtension.uppercased()
+        return codecName.isEmpty ? container : "\(container) · \(codecName)"
+    }
 }

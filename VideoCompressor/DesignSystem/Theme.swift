@@ -2,37 +2,45 @@ import SwiftUI
 import UIKit
 
 /// Colors and metrics shared across the app. Every color adapts to light and dark appearance.
+///
+/// Palette: navy background, yellow headlines, orange-to-pink buttons, green accents.
 enum Theme {
-    static let backgroundTop = Color(light: 0xF8F5FF, dark: 0x06051A)
-    static let backgroundBottom = Color(light: 0xE4DBFF, dark: 0x1C1042)
-    static let textPrimary = Color(light: 0x1A1433, dark: 0xFFFFFF)
-    static let textSecondary = Color(light: 0x5E5878, dark: 0xA9A6BC)
-    static let star = Color(light: 0x8B5CF6, dark: 0xFFFFFF)
-    static let cardFill = Color(light: 0xFFFFFF, lightAlpha: 0.72, dark: 0xFFFFFF, darkAlpha: 0.06)
-    static let cardStroke = Color(light: 0x8B5CF6, lightAlpha: 0.22, dark: 0xB69CFF, darkAlpha: 0.22)
+    static let backgroundTop = Color(light: 0xF4F7FF, dark: 0x070F2B)
+    static let backgroundBottom = Color(light: 0xD9E3FF, dark: 0x0E1F52)
+    static let textPrimary = Color(light: 0x0B1538, dark: 0xFFFFFF)
+    static let textSecondary = Color(light: 0x4A5578, dark: 0xA8B3D1)
+    static let star = Color(light: 0x3B5BDB, dark: 0xFFFFFF)
+    static let cardFill = Color(light: 0xFFFFFF, lightAlpha: 0.75, dark: 0xFFFFFF, darkAlpha: 0.06)
+    static let cardStroke = Color(light: 0x1E3A8A, lightAlpha: 0.18, dark: 0x9DB4FF, darkAlpha: 0.22)
 
-    static let accent = Color(hex: 0x8B5CF6)
-    static let accentBright = Color(hex: 0xA855F7)
-    static let accentDeep = Color(hex: 0x6D4AE8)
-    static let accentText = Color(light: 0x6D3FE0, dark: 0x9B7BFF)
+    /// Yellow used for headlines.
+    static let headline = Color(light: 0xB27600, dark: 0xFFD60A)
+    /// Green used for accents: icons, links, highlighted figures.
+    static let accent = Color(light: 0x15803D, dark: 0x4ADE80)
 
-    static let pillStart = Color(hex: 0xFF8A1F)
-    static let pillEnd = Color(hex: 0xFF2D78)
+    static let buttonStart = Color(hex: 0xFF8A1F)
+    static let buttonEnd = Color(hex: 0xFF2D78)
+    /// Color of the glow that flares around buttons when tapped.
+    static let glow = Color(hex: 0xFF5A6E)
     static let arrowGreen = Color(hex: 0x3DBE6B)
-    static let success = Color(hex: 0x34C759)
+    static let success = Color(hex: 0x22C55E)
     static let warning = Color(light: 0xB25E00, dark: 0xFFC46B)
 
+    static let levelHigh = Color(light: 0x15803D, dark: 0x4ADE80)
+    static let levelMedium = Color(light: 0xB27600, dark: 0xFFD60A)
+    static let levelLow = Color(light: 0xD92D20, dark: 0xFF453A)
+
+    /// Face and base of the raised 3D buttons.
+    static let raisedFace = Color(light: 0xFFFFFF, dark: 0x1C2C66)
+    static let raisedBase = Color(light: 0x9FB0E6, dark: 0x050A1F)
+
     static let primaryGradient = LinearGradient(
-        colors: [accentBright, accentDeep],
+        colors: [buttonStart, buttonEnd],
         startPoint: .leading,
         endPoint: .trailing
     )
 
-    static let pillGradient = LinearGradient(
-        colors: [pillStart, pillEnd],
-        startPoint: .leading,
-        endPoint: .trailing
-    )
+    static let pillGradient = primaryGradient
 
     static let cornerRadius: CGFloat = 22
     static let contentMaxWidth: CGFloat = 560

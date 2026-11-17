@@ -10,17 +10,17 @@ nonisolated enum CompressionPreset: String, CaseIterable, Identifiable, Hashable
 
     var title: String {
         switch self {
-        case .high: String(localized: "High")
-        case .medium: String(localized: "Medium")
-        case .low: String(localized: "Low")
+        case .high: String(localized: "High", bundle: L10n.bundle)
+        case .medium: String(localized: "Medium", bundle: L10n.bundle)
+        case .low: String(localized: "Low", bundle: L10n.bundle)
         }
     }
 
     var fullTitle: String {
         switch self {
-        case .high: String(localized: "High compression")
-        case .medium: String(localized: "Medium compression")
-        case .low: String(localized: "Low compression")
+        case .high: String(localized: "High compression", bundle: L10n.bundle)
+        case .medium: String(localized: "Medium compression", bundle: L10n.bundle)
+        case .low: String(localized: "Low compression", bundle: L10n.bundle)
         }
     }
 

@@ -16,8 +16,8 @@ nonisolated enum AppearanceMode: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .light: String(localized: "Light")
-        case .dark: String(localized: "Dark")
+        case .light: String(localized: "Light", bundle: L10n.bundle)
+        case .dark: String(localized: "Dark", bundle: L10n.bundle)
         }
     }
 

@@ -9,7 +9,7 @@ struct EstimateSection: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Estimated Size")
                 .font(.headline)
-                .foregroundStyle(Theme.textPrimary)
+                .foregroundStyle(Theme.headline)
 
             ComparisonCard(
                 originalText: originalBytes?.formattedFileSize ?? "—",
@@ -23,13 +23,12 @@ struct EstimateSection: View {
 
     private var footnote: String {
         if let estimate {
-            let percent = estimate.reduction.formatted(.percent.precision(.fractionLength(0)))
-            return String(localized: "About \(percent) smaller")
+            return String(localized: "About \(estimate.reduction.formattedPercent) smaller", bundle: L10n.bundle)
         }
         if originalBytes != nil {
-            return String(localized: "Choose a compression level to see the estimate.")
+            return String(localized: "Choose a compression level to see the estimate.", bundle: L10n.bundle)
         }
-        return String(localized: "Select a video to see how much space you'll save.")
+        return String(localized: "Select a video to see how much space you'll save.", bundle: L10n.bundle)
     }
 }
 

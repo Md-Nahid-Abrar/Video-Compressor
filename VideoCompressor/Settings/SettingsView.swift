@@ -1,20 +1,26 @@
 import SwiftUI
 
-/// App details, appearance switch and support contact.
+/// App details, appearance, language, feedback, rating, invite, and links.
 struct SettingsView: View {
     @State private var viewModel = SettingsViewModel()
     @AppStorage(StorageKey.appearance) private var appearance: AppearanceMode = .dark
+    @AppStorage(StorageKey.language) private var language: AppLanguage = .english
 
     var body: some View {
         ScreenContainer {
-            VStack(spacing: 20) {
+            VStack(spacing: 18) {
                 header
-                appearanceCard
-                supportCard
+                appearanceSection
+                languageSection
+                FeedbackSection(makeURL: viewModel.feedbackURL(message:))
+                RatingSection()
+                InviteSection(link: viewModel.privacyPolicyURL)
+                linksSection
             }
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
+        .scrollDismissesKeyboard(.interactively)
     }
 
     private var header: some View {
@@ -24,11 +30,11 @@ struct SettingsView: View {
                 .foregroundStyle(.white)
                 .frame(width: 88, height: 88)
                 .background(Theme.primaryGradient, in: .rect(cornerRadius: 22))
-                .shadow(color: Theme.accentBright.opacity(0.5), radius: 16)
+                .shadow(color: Theme.glow.opacity(0.5), radius: 16)
                 .accessibilityHidden(true)
             Text(viewModel.appName)
                 .font(.title.weight(.black))
-                .foregroundStyle(Theme.textPrimary)
+                .foregroundStyle(Theme.headline)
             Text(viewModel.versionText)
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
@@ -37,48 +43,67 @@ struct SettingsView: View {
         .padding(.top, 12)
     }
 
-    private var appearanceCard: some View {
-        GlassCard {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Appearance")
-                    .font(.headline)
-                    .foregroundStyle(Theme.textPrimary)
-                Button {
-                    withAnimation(.smooth) {
-                        appearance = appearance.toggled
-                    }
-                } label: {
-                    Label(appearance.title, systemImage: appearance.symbolName)
-                        .contentTransition(.symbolEffect(.replace))
+    private var appearanceSection: some View {
+        SettingsSection(title: "Appearance") {
+            Button {
+                withAnimation(.smooth) {
+                    appearance = appearance.toggled
                 }
-                .buttonStyle(.glow)
-                .accessibilityIdentifier("settings.appearance")
-                .accessibilityLabel("Appearance")
-                .accessibilityValue(appearance.title)
-                .accessibilityHint("Switches between light and dark mode")
+            } label: {
+                Label(appearance.title, systemImage: appearance.symbolName)
+                    .contentTransition(.symbolEffect(.replace))
+            }
+            .buttonStyle(.glow)
+            .accessibilityIdentifier("settings.appearance")
+            .accessibilityLabel("Appearance")
+            .accessibilityValue(appearance.title)
+            .accessibilityHint("Switches between light and dark mode")
+        }
+    }
+
+    private var languageSection: some View {
+        SettingsSection(title: "Language") {
+            Picker("Language", selection: $language) {
+                ForEach(AppLanguage.allCases) { option in
+                    Text(verbatim: option.displayName).tag(option)
+                }
+            }
+            .pickerStyle(.menu)
+            .tint(Theme.accent)
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            .padding(.horizontal, 6)
+            .background(Theme.cardFill, in: .rect(cornerRadius: 14))
+            .overlay {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .strokeBorder(Theme.cardStroke, lineWidth: 1)
+            }
+            .accessibilityIdentifier("settings.language")
+        }
+    }
+
+    private var linksSection: some View {
+        SettingsSection(title: "Support") {
+            Link(destination: viewModel.privacyPolicyURL) {
+                linkLabel("Privacy Policy", symbol: "hand.raised.fill")
+            }
+            .accessibilityIdentifier("settings.privacyPolicy")
+            .accessibilityHint("Opens in your browser")
+
+            if let url = viewModel.supportURL {
+                Link(destination: url) {
+                    linkLabel(LocalizedStringKey(viewModel.supportEmail), symbol: "envelope.fill")
+                }
+                .accessibilityIdentifier("settings.supportEmail")
+                .accessibilityHint("Opens a new email")
             }
         }
     }
 
-    private var supportCard: some View {
-        GlassCard {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Support")
-                    .font(.headline)
-                    .foregroundStyle(Theme.textPrimary)
-                if let url = viewModel.supportURL {
-                    Link(destination: url) {
-                        Label(viewModel.supportEmail, systemImage: "envelope.fill")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(Theme.accentText)
-                            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                    }
-                    .accessibilityIdentifier("settings.supportEmail")
-                    .accessibilityHint("Opens a new email")
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
+    private func linkLabel(_ title: LocalizedStringKey, symbol: String) -> some View {
+        Label(title, systemImage: symbol)
+            .font(.body.weight(.semibold))
+            .foregroundStyle(Theme.accent)
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
     }
 }
 

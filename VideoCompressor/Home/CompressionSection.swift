@@ -11,36 +11,40 @@ struct CompressionSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Compression")
+            Text("Compression Level")
                 .font(.headline)
-                .foregroundStyle(Theme.textPrimary)
+                .foregroundStyle(Theme.headline)
 
             if let selectedPreset {
                 VStack(spacing: 10) {
                     Button("Export", systemImage: "square.and.arrow.down.on.square", action: onExport)
                         .buttonStyle(.glow)
                         .accessibilityIdentifier("home.export")
-                    HStack(spacing: 6) {
-                        Text(selectedPreset.fullTitle)
-                            .foregroundStyle(Theme.textSecondary)
-                        Text("·").foregroundStyle(Theme.textSecondary)
-                        Button("Change compression", action: onChange)
-                            .foregroundStyle(Theme.accentText)
-                            .fontWeight(.semibold)
-                            .accessibilityIdentifier("home.changeCompression")
+                    HStack(spacing: 14) {
+                        Text(selectedPreset.title)
+                            .font(.title3.weight(.heavy))
+                            .foregroundStyle(selectedPreset.levelColor)
+                            .accessibilityIdentifier("home.selectedLevel")
+                        Button(action: onChange) {
+                            HStack(spacing: 6) {
+                                Image(systemName: "arrow.triangle.2.circlepath.circle")
+                                    .font(.title3)
+                                Text("Change compression")
+                                    .font(.subheadline.weight(.semibold))
+                            }
+                            .blinking()
+                        }
+                        .accessibilityIdentifier("home.changeCompression")
                     }
-                    .font(.subheadline)
-                    .frame(minHeight: 44)
+                    .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .transition(.scale(scale: 0.94).combined(with: .opacity))
             } else {
                 VStack(alignment: .leading, spacing: 8) {
-                    GlassEffectContainer(spacing: 12) {
-                        HStack(spacing: 12) {
-                            ForEach(CompressionPreset.allCases) { preset in
-                                PresetButton(preset: preset, estimate: estimate(preset)) {
-                                    onChoose(preset)
-                                }
+                    HStack(spacing: 12) {
+                        ForEach(CompressionPreset.allCases) { preset in
+                            PresetButton(preset: preset, estimate: estimate(preset)) {
+                                onChoose(preset)
                             }
                         }
                     }
@@ -61,8 +65,8 @@ struct CompressionSection: View {
     ZStack {
         StarfieldBackground()
         CompressionSection(
-            isEnabled: false,
-            selectedPreset: nil,
+            isEnabled: true,
+            selectedPreset: .high,
             estimate: { _ in nil },
             onChoose: { _ in },
             onChange: {},

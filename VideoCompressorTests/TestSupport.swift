@@ -43,7 +43,7 @@ nonisolated struct FakeInspector: VideoInspecting {
     var metadata: VideoMetadata
 
     func inspect(url: URL) async throws(CompressionError) -> VideoMetadata { metadata }
-    func thumbnail(for url: URL) async -> CGImage? { nil }
+    func previewFrames(for url: URL, duration: Double) async -> [CGImage] { [] }
 }
 
 nonisolated struct FakeCompressor: VideoCompressing {

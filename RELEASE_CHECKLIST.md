@@ -8,10 +8,21 @@ Things that need you or your Apple account before TestFlight and App Store submi
 - [ ] Create the app record in App Store Connect. "Video Compressor" is likely taken as a store name, so choose a unique listing name (the home-screen name can stay).
 - [ ] Product → Archive in Xcode, then Validate App, then Distribute to TestFlight.
 
+## Test-phase features to resolve before App Store review
+These work as you specified for testing, but each is a likely rejection if submitted as is.
+- [ ] **Promo-code Premium.** Guideline 3.1.1 does not allow unlocking features with codes or keys outside In-App Purchase. Before release, either sell Premium through StoreKit (Apple's own offer codes are allowed) or remove it. The codes are also readable inside the app binary.
+- [ ] **Hardware Acceleration switch.** It does nothing, and the app already uses the hardware encoder for everyone. A paid switch that claims a speed-up it doesn't deliver falls under Guideline 2.3.1 (misleading features). Make it real or remove it.
+- [ ] **Submit Rating button.** It does nothing. Wire it to the system rating prompt (`requestReview`) or remove it.
+- [ ] **Invite Others.** It copies the privacy policy link as a stand-in. Replace with the App Store link once the app has one.
+- [ ] **Privacy Policy link.** It points to a Google Doc in edit mode. Publish a read-only page and use the same URL in App Store Connect.
+- [ ] **Feedback.** Sending opens the user's Mail app addressed to the feedback address; it needs a mail account on the device.
+
 ## Check on a real iPhone (cannot be tested in the Simulator)
 - [ ] Start an export, leave the app, and confirm it keeps running with the system progress indicator and finishes with the notification. If the export instead fails with the "interrupted" message, tell Claude; the app already falls back safely.
 - [ ] Compress an HDR video shot on the phone and confirm the result still looks HDR in Photos.
 - [ ] Share a result by AirDrop and by a messaging app.
+- [ ] On the result screen, press Play and confirm both videos stay in step, including on a long 4K video.
+- [ ] Send feedback from Settings and confirm the email arrives.
 
 ## App Store Connect metadata
 - [ ] Support URL and Privacy Policy URL (both required).

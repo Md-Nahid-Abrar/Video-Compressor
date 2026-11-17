@@ -11,7 +11,7 @@ struct CompressionSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Compression")
+            Text("Compression Level")
                 .font(.headline)
                 .foregroundStyle(Theme.textPrimary)
 
@@ -24,9 +24,16 @@ struct CompressionSection: View {
                         Text(selectedPreset.fullTitle)
                             .foregroundStyle(Theme.textSecondary)
                         Text("·").foregroundStyle(Theme.textSecondary)
-                        Button("Change compression", action: onChange)
+                        Button(action: onChange) {
+                            HStack(spacing: 5) {
+                                Image(systemName: "arrow.triangle.2.circlepath.circle")
+                                    .font(.title3)
+                                Text("Change compression")
+                                    .fontWeight(.semibold)
+                            }
                             .foregroundStyle(Theme.accentText)
-                            .fontWeight(.semibold)
+                            .blinking()
+                        }
                             .accessibilityIdentifier("home.changeCompression")
                     }
                     .font(.subheadline)
@@ -35,12 +42,10 @@ struct CompressionSection: View {
                 .transition(.scale(scale: 0.94).combined(with: .opacity))
             } else {
                 VStack(alignment: .leading, spacing: 8) {
-                    GlassEffectContainer(spacing: 12) {
-                        HStack(spacing: 12) {
-                            ForEach(CompressionPreset.allCases) { preset in
-                                PresetButton(preset: preset, estimate: estimate(preset)) {
-                                    onChoose(preset)
-                                }
+                    HStack(spacing: 12) {
+                        ForEach(CompressionPreset.allCases) { preset in
+                            PresetButton(preset: preset, estimate: estimate(preset)) {
+                                onChoose(preset)
                             }
                         }
                     }

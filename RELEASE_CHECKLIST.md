@@ -8,6 +8,14 @@ Things that need you or your Apple account before TestFlight and App Store submi
 - [ ] Create the app record in App Store Connect. "Video Compressor" is likely taken as a store name, so choose a unique listing name (the home-screen name can stay).
 - [ ] Product → Archive in Xcode, then Validate App, then Distribute to TestFlight.
 
+## Test-phase features to resolve before App Store review
+These work as specified for testing, but each is a likely rejection if submitted as is.
+- [ ] **Promo-code Premium.** Guideline 3.1.1 does not allow unlocking features with codes or keys outside In-App Purchase, and Premium currently unlocks nothing. Before release, sell it through StoreKit with real benefits, or remove it. The codes are also readable inside the app binary.
+- [ ] **Submit Rating button.** It does nothing. Wire it to the system rating prompt (`requestReview`) or remove it.
+- [ ] **Invite Others.** It copies the privacy policy link as a stand-in. Replace with the App Store link once the app has one.
+- [ ] **Privacy Policy link.** It points to a Google Doc in edit mode. Publish a read-only page and use the same URL in App Store Connect.
+- [ ] **Feedback.** Sending opens the user's Mail app addressed to the feedback address; it needs a mail account on the device.
+
 ## Check on a real iPhone (cannot be tested in the Simulator)
 - [ ] Start an export, leave the app, and confirm it keeps running with the system progress indicator and finishes with the notification. If the export instead fails with the "interrupted" message, tell Claude; the app already falls back safely.
 - [ ] Compress an HDR video shot on the phone and confirm the result still looks HDR in Photos.

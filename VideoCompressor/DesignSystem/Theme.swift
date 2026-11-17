@@ -22,6 +22,14 @@ enum Theme {
     static let success = Color(hex: 0x34C759)
     static let warning = Color(light: 0xB25E00, dark: 0xFFC46B)
 
+    /// Color of the glow that flares around buttons when tapped.
+    static let glow = accentBright
+    /// Gold used for Premium and for lit rating stars.
+    static let premium = Color(light: 0xA86B00, dark: 0xFFD60A)
+    /// Face and base of the raised 3D buttons.
+    static let raisedFace = Color(light: 0xFFFFFF, dark: 0x2A2060)
+    static let raisedBase = Color(light: 0xB7A6F2, dark: 0x0A0620)
+
     static let primaryGradient = LinearGradient(
         colors: [accentBright, accentDeep],
         startPoint: .leading,

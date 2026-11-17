@@ -26,11 +26,22 @@ final class ExportViewModel {
     private(set) var progress = 0.0
     private(set) var continuesInBackground = false
     private(set) var saveState: SaveState = .idle
+    /// Whether the user has opened the share sheet for this result.
+    private(set) var hasShared = false
     var saveError: PhotoSaveError?
 
     init(request: ExportRequest, services: AppServices) {
         self.request = request
         self.services = services
+    }
+
+    /// The play buttons appear once the result has been saved or shared.
+    var canPlayBack: Bool {
+        saveState == .saved || hasShared
+    }
+
+    func markShared() {
+        hasShared = true
     }
 
     var isCompressing: Bool {
@@ -67,6 +78,7 @@ final class ExportViewModel {
         phase = .compressing
         progress = 0
         saveState = .idle
+        hasShared = false
         stoppedBySystem = false
         task = Task { [weak self] in
             await self?.perform()
@@ -78,7 +90,7 @@ final class ExportViewModel {
         guard !Task.isCancelled else { return }
 
         continuesInBackground = services.background.begin(
-            title: String(localized: "Compressing video"),
+            title: String(localized: "Compressing video", bundle: L10n.bundle),
             subtitle: request.preset.fullTitle,
             onExpire: { [weak self] in
                 self?.stoppedBySystem = true
@@ -112,7 +124,7 @@ final class ExportViewModel {
             if error == .cancelled {
                 // A user cancel leaves the screen; only a system stop needs explaining.
                 guard stoppedBySystem else { return }
-                phase = .failed(String(localized: "Compression was stopped before it finished. Try again."))
+                phase = .failed(String(localized: "Compression was stopped before it finished. Try again.", bundle: L10n.bundle))
             } else {
                 phase = .failed(error.message)
             }

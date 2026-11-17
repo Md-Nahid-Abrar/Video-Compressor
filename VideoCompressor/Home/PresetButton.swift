@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// One of the three compression level buttons.
+/// One of the three compression level buttons, drawn as a raised 3D key.
 struct PresetButton: View {
     let preset: CompressionPreset
     let estimate: SizeEstimate?
@@ -19,17 +19,18 @@ struct PresetButton: View {
                     .font(.caption2.weight(.medium))
                     .foregroundStyle(Theme.textSecondary)
                 Text(estimate.map { "≈ \($0.estimatedBytes.formattedFileSize)" } ?? " ")
-                    .font(.caption.weight(.semibold))
+                    .font(.callout.weight(.heavy))
                     .monospacedDigit()
                     .foregroundStyle(Theme.accentText)
             }
             .lineLimit(1)
-            .minimumScaleFactor(0.7)
-            .padding(.vertical, 10)
+            .minimumScaleFactor(0.65)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 12)
         }
-        .buttonStyle(.glow(.secondary))
+        .buttonStyle(.raised)
         .accessibilityLabel(preset.fullTitle)
-        .accessibilityValue(estimate.map { String(localized: "About \($0.estimatedBytes.formattedFileSize)") } ?? "")
+        .accessibilityValue(estimate.map { String(localized: "About \($0.estimatedBytes.formattedFileSize)", bundle: L10n.bundle) } ?? "")
         .accessibilityIdentifier("home.preset.\(preset.rawValue)")
     }
 }

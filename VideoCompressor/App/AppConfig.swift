@@ -5,6 +5,13 @@ nonisolated enum AppConfig {
     /// Support contact shown in Settings. Replace with a monitored address before App Store submission.
     static let supportEmail = "developer@gmail.com"
 
+    /// Address that receives feedback written in Settings.
+    static let feedbackEmail = "covidcovid1919covid19@gmail.com"
+
+    static let privacyPolicyURL = URL(
+        string: "https://docs.google.com/document/d/1ntlLtSBznjH6qx9PDYXyawEXYGedE_y5Ir8DwoxZcpY/edit?usp=sharing"
+    )!
+
     static var appName: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Video Compressor"
     }

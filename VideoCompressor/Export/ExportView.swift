@@ -4,6 +4,7 @@ import SwiftUI
 struct ExportView: View {
     @State private var viewModel: ExportViewModel
     @State private var isCancelDialogPresented = false
+    @State private var playback: PlaybackChoice?
     @Environment(\.openURL) private var openURL
     private let router: AppRouter
 
@@ -97,7 +98,7 @@ struct ExportView: View {
                         .tint(Theme.accentBright)
                         .scaleEffect(y: 2, anchor: .center)
                         .accessibilityIdentifier("export.progress")
-                    Text(viewModel.progress.formatted(.percent.precision(.fractionLength(0))))
+                    Text(viewModel.progress.formattedPercent)
                         .font(.system(.title2, design: .rounded, weight: .heavy))
                         .monospacedDigit()
                         .foregroundStyle(Theme.textPrimary)
@@ -162,8 +163,32 @@ struct ExportView: View {
                     Label("Share with Others", systemImage: "square.and.arrow.up")
                 }
                 .buttonStyle(.glow(.secondary))
+                .simultaneousGesture(TapGesture().onEnded { viewModel.markShared() })
                 .accessibilityIdentifier("export.share")
+
+                if viewModel.canPlayBack {
+                    Button("Play Original Video", systemImage: "play.rectangle") {
+                        playback = .original
+                    }
+                    .buttonStyle(.glow(.secondary))
+                    .accessibilityIdentifier("export.playOriginal")
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+
+                    Button("Play Compressed Video", systemImage: "play.rectangle.fill") {
+                        playback = .compressed
+                    }
+                    .buttonStyle(.glow(.secondary))
+                    .accessibilityIdentifier("export.playCompressed")
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
             }
+            .animation(.smooth, value: viewModel.canPlayBack)
+        }
+        .fullScreenCover(item: $playback) { choice in
+            VideoPlaybackView(
+                title: choice.title,
+                url: choice == .original ? viewModel.request.sourceURL : result.outputURL
+            )
         }
     }
 
@@ -195,10 +220,10 @@ struct ExportView: View {
 
     private func reductionText(_ result: CompressionResult) -> String {
         guard result.reduction > 0 else {
-            return String(localized: "This video was already well compressed.")
+            return String(localized: "This video was already well compressed.", bundle: L10n.bundle)
         }
-        let percent = result.reduction.formatted(.percent.precision(.fractionLength(0)))
-        return String(localized: "\(percent) smaller")
+        let percent = result.reduction.formattedPercent
+        return String(localized: "\(percent) smaller", bundle: L10n.bundle)
     }
 
     // MARK: - Failed

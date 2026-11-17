@@ -22,8 +22,8 @@ nonisolated struct NotificationService: CompletionNotifying {
         guard status == .authorized || status == .provisional else { return }
 
         let content = UNMutableNotificationContent()
-        content.title = String(localized: "Video compressed successfully")
-        content.body = String(localized: "Your video is ready to save or share.")
+        content.title = String(localized: "Video compressed successfully", bundle: L10n.bundle)
+        content.body = String(localized: "Your video is ready to save or share.", bundle: L10n.bundle)
         content.sound = .default
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         try? await center.add(request)

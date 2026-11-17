@@ -77,6 +77,23 @@ struct ExportViewModelTests {
         #expect(support.saver.savedURLs.count == 1)
     }
 
+    @Test func playbackUnlocksAfterSavingOrSharing() async {
+        let support = TestServices()
+        let saved = ExportViewModel(request: request, services: support.make())
+        saved.start()
+        await waitUntil { !saved.isCompressing }
+        #expect(!saved.canPlayBack)
+        await saved.saveToPhotos()
+        #expect(saved.canPlayBack)
+
+        let shared = ExportViewModel(request: request, services: support.make())
+        shared.start()
+        await waitUntil { !shared.isCompressing }
+        #expect(!shared.canPlayBack)
+        shared.markShared()
+        #expect(shared.canPlayBack)
+    }
+
     @Test func deniedPhotoAccessSurfacesError() async {
         let support = TestServices()
         support.saver.error = .accessDenied

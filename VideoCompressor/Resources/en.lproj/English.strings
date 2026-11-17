@@ -1,0 +1,2 @@
+/* Marks English as a bundled language so it can be selected explicitly, even on a device set to Arabic or Bengali. */
+"language" = "English";

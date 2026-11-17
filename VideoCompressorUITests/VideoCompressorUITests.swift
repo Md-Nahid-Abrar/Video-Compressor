@@ -118,6 +118,21 @@ final class VideoCompressorUITests: XCTestCase {
         XCTAssertTrue(app.buttons["export.save"].exists)
         XCTAssertTrue(app.buttons["export.share"].exists)
 
+        // The play buttons appear only after saving (or sharing).
+        XCTAssertFalse(app.buttons["export.playOriginal"].exists)
+        app.buttons["export.save"].tap()
+        allowNotificationsIfAsked()
+        XCTAssertTrue(app.buttons["export.playOriginal"].waitForExistence(timeout: 15))
+        XCTAssertTrue(app.buttons["export.playCompressed"].exists)
+
+        for (button, title) in [("export.playOriginal", "Original Video"), ("export.playCompressed", "Compressed Video")] {
+            app.buttons[button].tap()
+            XCTAssertTrue(app.buttons["playback.close"].waitForExistence(timeout: 5))
+            XCTAssertEqual(app.staticTexts["playback.title"].label, title)
+            app.buttons["playback.close"].tap()
+            XCTAssertTrue(app.buttons[button].waitForExistence(timeout: 5))
+        }
+
         app.buttons["export.done"].tap()
         XCTAssertTrue(app.buttons["home.changeVideo"].waitForExistence(timeout: 5))
     }
@@ -162,6 +177,101 @@ final class VideoCompressorUITests: XCTestCase {
         XCTAssertEqual(appearance.value as? String, "Light")
         appearance.tap()
         XCTAssertEqual(appearance.value as? String, "Dark")
+
+        // Rating: stars stay unlit until tapped, and Submit is disabled until then.
+        let submit = app.buttons["settings.submitRating"]
+        app.swipeUp()
+        XCTAssertTrue(submit.waitForExistence(timeout: 5))
+        XCTAssertFalse(submit.isEnabled)
+        app.buttons["settings.star.4"].tap()
+        XCTAssertTrue(submit.isEnabled)
+        XCTAssertTrue(app.buttons["settings.star.4"].isSelected)
+        XCTAssertFalse(app.buttons["settings.star.5"].isSelected)
+
+        app.swipeUp()
+        XCTAssertTrue(app.buttons["settings.invite"].exists)
+        XCTAssertTrue(app.descendants(matching: .any)["settings.privacyPolicy"].exists)
+        XCTAssertTrue(app.buttons["settings.sendFeedback"].exists)
+    }
+
+    // MARK: - Premium
+
+    @MainActor
+    private func redeem(_ code: String) {
+        let field = app.textFields["promo.code"]
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        field.tap()
+        field.typeText(code)
+        app.buttons["promo.activate"].tap()
+    }
+
+    @MainActor
+    func testPromoCodeUnlocksPremiumAndItCanBeCancelled() {
+        launch("-UITestResetState", "-UITestSkipWelcome")
+        let premiumButton = app.buttons["home.premium"]
+        let badge = app.descendants(matching: .any)["premium.badge"]
+        XCTAssertTrue(premiumButton.waitForExistence(timeout: 10))
+        XCTAssertEqual(premiumButton.label, "Premium")
+        XCTAssertFalse(badge.exists)
+
+        premiumButton.tap()
+        redeem("123")
+        XCTAssertTrue(app.staticTexts["promo.error"].waitForExistence(timeout: 5))
+        XCTAssertFalse(badge.exists)
+
+        redeem("444")
+        XCTAssertTrue(badge.waitForExistence(timeout: 5))
+        let countdown = app.staticTexts["premium.countdown"]
+        XCTAssertTrue(countdown.label.hasPrefix("Ends in 4"), "Unexpected countdown: \(countdown.label)")
+        XCTAssertEqual(premiumButton.label, "Cancel Premium")
+
+        // Premium survives a relaunch.
+        app.terminate()
+        launch("-UITestSkipWelcome")
+        XCTAssertTrue(badge.waitForExistence(timeout: 10))
+
+        // Cancel Premium asks first, then ends it.
+        app.buttons["home.premium"].tap()
+        app.alerts.buttons["Keep Premium"].tap()
+        XCTAssertTrue(badge.exists)
+        app.buttons["home.premium"].tap()
+        app.alerts.buttons["Cancel Premium"].tap()
+        let gone = expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: badge)
+        wait(for: [gone], timeout: 5)
+        XCTAssertEqual(app.buttons["home.premium"].label, "Premium")
+    }
+
+    @MainActor
+    func testPremiumEndsWhenCountdownFinishes() {
+        launch("-UITestResetState", "-UITestSkipWelcome", "-UITestShortPremium")
+        app.buttons["home.premium"].tap()
+        redeem("999")
+        let badge = app.descendants(matching: .any)["premium.badge"]
+        XCTAssertTrue(badge.waitForExistence(timeout: 5))
+        let gone = expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: badge)
+        wait(for: [gone], timeout: 15)
+        XCTAssertEqual(app.buttons["home.premium"].label, "Premium")
+    }
+
+    // MARK: - Language
+
+    @MainActor
+    func testLanguageCanBeSwitchedToSpanishAndBengali() {
+        launch("-UITestResetState", "-UITestSkipWelcome")
+        app.buttons["home.settings"].tap()
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 5))
+
+        app.buttons["settings.language"].tap()
+        app.buttons["Español"].tap()
+        XCTAssertTrue(app.navigationBars["Ajustes"].waitForExistence(timeout: 5))
+
+        app.buttons["settings.language"].tap()
+        app.buttons["বাংলা"].tap()
+        XCTAssertTrue(app.navigationBars["সেটিংস"].waitForExistence(timeout: 5))
+
+        app.buttons["settings.language"].tap()
+        app.buttons["English"].tap()
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 5))
     }
 
     // MARK: - Performance

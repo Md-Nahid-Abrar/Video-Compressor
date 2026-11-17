@@ -23,13 +23,13 @@ struct EstimateSection: View {
 
     private var footnote: String {
         if let estimate {
-            let percent = estimate.reduction.formatted(.percent.precision(.fractionLength(0)))
-            return String(localized: "About \(percent) smaller")
+            let percent = estimate.reduction.formattedPercent
+            return String(localized: "About \(percent) smaller", bundle: L10n.bundle)
         }
         if originalBytes != nil {
-            return String(localized: "Choose a compression level to see the estimate.")
+            return String(localized: "Choose a compression level to see the estimate.", bundle: L10n.bundle)
         }
-        return String(localized: "Select a video to see how much space you'll save.")
+        return String(localized: "Select a video to see how much space you'll save.", bundle: L10n.bundle)
     }
 }
 

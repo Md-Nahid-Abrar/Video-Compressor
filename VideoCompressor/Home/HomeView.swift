@@ -3,17 +3,18 @@ import SwiftUI
 
 /// The main screen: pick a video, choose a compression level, see the estimate.
 struct HomeView: View {
-    @State private var viewModel: HomeViewModel
-    private let router: AppRouter
-
-    init(services: AppServices, router: AppRouter) {
-        _viewModel = State(initialValue: HomeViewModel(services: services))
-        self.router = router
-    }
+    @Environment(HomeViewModel.self) private var viewModel
+    @Environment(AppRouter.self) private var router
+    @Environment(PremiumStore.self) private var premium
+    @State private var isPromoPresented = false
+    @State private var isCancelPremiumPresented = false
 
     var body: some View {
+        @Bindable var viewModel = viewModel
         ScreenContainer {
-            VStack(spacing: 24) {
+            VStack(spacing: 20) {
+                PremiumStatusField()
+
                 VStack(spacing: 2) {
                     Text("Compress")
                         .foregroundStyle(Theme.textPrimary)
@@ -56,19 +57,30 @@ struct HomeView: View {
         }
         .navigationTitle("Video Compressor")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button("Profile", systemImage: "person.crop.circle") {
-                    router.push(.profile)
-                }
-                .accessibilityIdentifier("home.profile")
+        .safeAreaInset(edge: .bottom) {
+            HomeBottomBar(
+                isPremiumActive: premium.isActive,
+                onSettings: { router.push(.settings) },
+                onPremium: {
+                    if premium.isActive {
+                        isCancelPremiumPresented = true
+                    } else {
+                        isPromoPresented = true
+                    }
+                },
+                onProfile: { router.push(.profile) }
+            )
+        }
+        .sheet(isPresented: $isPromoPresented) {
+            PromoCodeSheet()
+        }
+        .alert("Cancel Premium?", isPresented: $isCancelPremiumPresented) {
+            Button("Cancel Premium", role: .destructive) {
+                premium.cancel()
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Settings", systemImage: "gearshape") {
-                    router.push(.settings)
-                }
-                .accessibilityIdentifier("home.settings")
-            }
+            Button("Keep Premium", role: .cancel) {}
+        } message: {
+            Text("Premium will end now. You can enter a promo code again later.")
         }
         .photosPicker(
             isPresented: $viewModel.isPickerPresented,
@@ -86,11 +98,5 @@ struct HomeView: View {
         } message: { alert in
             Text(alert.message)
         }
-    }
-}
-
-#Preview {
-    NavigationStack {
-        HomeView(services: .live(), router: AppRouter())
     }
 }

@@ -27,7 +27,7 @@ struct WelcomeView: View {
                             compressedText: "20 MB",
                             originalCaption: "1920 × 1080",
                             compressedCaption: "1920 × 1080",
-                            footnote: String(localized: "Example. Results vary by video.")
+                            footnote: String(localized: "Example. Results vary by video.", bundle: L10n.bundle)
                         )
 
                         Text("Shrink videos from your library, then save or share them in a tap.")

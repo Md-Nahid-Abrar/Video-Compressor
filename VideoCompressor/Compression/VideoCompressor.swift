@@ -24,6 +24,9 @@ nonisolated struct VideoCompressor: VideoCompressing {
 
     // MARK: - Pipeline
 
+    /// How long the encoder may go without reading or writing a sample before it is treated as stuck.
+    static let stallTimeout: Duration = .seconds(30)
+
     private func run(
         source: URL,
         destination: URL,
@@ -42,6 +45,7 @@ nonisolated struct VideoCompressor: VideoCompressing {
         let reader = try AVAssetReader(asset: asset)
         let writer = try AVAssetWriter(outputURL: destination, fileType: .mp4)
         writer.shouldOptimizeForNetworkUse = true
+        let activity = ActivityClock()
 
         // Video: decode to planar YUV (10-bit for HDR), encode to HEVC.
         let pixelFormat = settings.isHDR
@@ -54,12 +58,23 @@ nonisolated struct VideoCompressor: VideoCompressing {
         videoOutput.alwaysCopiesSampleData = false
         let videoInput = AVAssetWriterInput(mediaType: .video, outputSettings: Self.videoSettings(for: settings))
         videoInput.transform = transform
-        let videoProvider = reader.outputProvider(for: videoOutput)
-        let videoReceiver = writer.inputReceiver(for: videoInput)
+        videoInput.expectsMediaDataInRealTime = false
+        guard reader.canAdd(videoOutput), writer.canAdd(videoInput) else {
+            throw CompressionError.unreadable
+        }
+        reader.add(videoOutput)
+        writer.add(videoInput)
+        var pumps = [SamplePump(
+            output: videoOutput,
+            input: videoInput,
+            label: "video",
+            activity: activity,
+            frameInterval: settings.frameRateCap.map { 1 / $0 },
+            duration: duration,
+            progress: progress
+        )]
 
         // Audio: decode to PCM, encode to AAC.
-        let audioProvider: SampleProvider?
-        let audioReceiver: AVAssetWriterInput.SampleBufferReceiver?
         if let audioTrack, let audioBitrate = settings.audioBitrate {
             let audioOutput = AVAssetReaderTrackOutput(track: audioTrack, outputSettings: Self.pcmSettings(for: settings))
             audioOutput.alwaysCopiesSampleData = false
@@ -67,29 +82,44 @@ nonisolated struct VideoCompressor: VideoCompressing {
                 mediaType: .audio,
                 outputSettings: Self.aacSettings(for: settings, bitrate: audioBitrate)
             )
-            audioProvider = reader.outputProvider(for: audioOutput)
-            audioReceiver = writer.inputReceiver(for: audioInput)
-        } else {
-            audioProvider = nil
-            audioReceiver = nil
+            audioInput.expectsMediaDataInRealTime = false
+            if reader.canAdd(audioOutput), writer.canAdd(audioInput) {
+                reader.add(audioOutput)
+                writer.add(audioInput)
+                pumps.append(SamplePump(output: audioOutput, input: audioInput, label: "audio", activity: activity))
+            }
         }
 
-        try reader.start()
-        try writer.start()
+        guard reader.startReading() else {
+            throw reader.error ?? CompressionError.unreadable
+        }
+        guard writer.startWriting() else {
+            throw writer.error ?? CompressionError.failed(String(localized: "The encoder stopped unexpectedly.", bundle: L10n.bundle))
+        }
         writer.startSession(atSourceTime: .zero)
 
         do {
             // Video and audio are pumped concurrently so the writer can interleave them.
-            async let video: Void = Self.pumpVideo(
-                from: videoProvider,
-                to: videoReceiver,
-                frameInterval: settings.frameRateCap.map { 1 / $0 },
-                duration: duration,
-                progress: progress
-            )
-            async let audio: Void = Self.pumpAudio(from: audioProvider, to: audioReceiver)
-            try await video
-            try await audio
+            // A watchdog runs alongside and fails the export if the encoder stops making progress.
+            let pumpList = pumps
+            try await withThrowingTaskGroup(of: Bool.self) { group in
+                for pump in pumpList {
+                    group.addTask {
+                        await pump.run()
+                        return true
+                    }
+                }
+                group.addTask {
+                    try await Self.watchForStall(activity)
+                    return false
+                }
+                var remaining = pumpList.count
+                while remaining > 0, let wasPump = try await group.next() {
+                    if wasPump { remaining -= 1 }
+                }
+                group.cancelAll()
+            }
+            try Task.checkCancellation()
         } catch {
             reader.cancelReading()
             writer.cancelWriting()
@@ -104,7 +134,7 @@ nonisolated struct VideoCompressor: VideoCompressing {
 
         await writer.finishWriting()
         guard writer.status == .completed else {
-            throw writer.error ?? CompressionError.failed(String(localized: "The encoder stopped unexpectedly."))
+            throw writer.error ?? CompressionError.failed(String(localized: "The encoder stopped unexpectedly.", bundle: L10n.bundle))
         }
         progress(1)
 
@@ -113,53 +143,15 @@ nonisolated struct VideoCompressor: VideoCompressing {
         return CompressionResult(outputURL: destination, originalBytes: originalBytes, compressedBytes: compressedBytes)
     }
 
-    // MARK: - Sample pumps
-
-    private typealias SampleProvider = AVAssetReaderOutput.Provider<CMReadySampleBuffer<CMSampleBuffer.DynamicContent>>
-
-    private static func pumpVideo(
-        from provider: sending SampleProvider,
-        to receiver: sending AVAssetWriterInput.SampleBufferReceiver,
-        frameInterval: Double?,
-        duration: Double,
-        progress: @Sendable (Double) -> Void
-    ) async throws {
-        var nextKeepTime = -Double.infinity
-        var lastReported = 0.0
-        while let buffer = try await provider.next() {
-            try Task.checkCancellation()
-            let time = buffer.presentationTimeStamp.seconds
-
-            if let frameInterval {
-                // Drop frames that arrive before the next output slot.
-                if time + frameInterval * 0.1 < nextKeepTime { continue }
-                let base = nextKeepTime.isFinite ? max(nextKeepTime, time - frameInterval) : time
-                nextKeepTime = base + frameInterval
-            }
-
-            try await receiver.append(buffer)
-
-            if duration > 0 {
-                let fraction = min(max(time / duration, 0), 1)
-                if fraction - lastReported >= 0.005 {
-                    lastReported = fraction
-                    progress(fraction)
-                }
+    /// Returns when cancelled; throws if no sample has moved for `stallTimeout`.
+    private static func watchForStall(_ activity: ActivityClock) async throws {
+        while !Task.isCancelled {
+            try? await Task.sleep(for: .seconds(2))
+            if Task.isCancelled { return }
+            if activity.idleTime > stallTimeout {
+                throw CompressionError.failed(String(localized: "The encoder stopped responding. Try again.", bundle: L10n.bundle))
             }
         }
-        receiver.finish()
-    }
-
-    private static func pumpAudio(
-        from provider: sending SampleProvider?,
-        to receiver: sending AVAssetWriterInput.SampleBufferReceiver?
-    ) async throws {
-        guard let provider, let receiver else { return }
-        while let buffer = try await provider.next() {
-            try Task.checkCancellation()
-            try await receiver.append(buffer)
-        }
-        receiver.finish()
     }
 
     // MARK: - Settings

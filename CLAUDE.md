@@ -53,3 +53,8 @@
 - The app target uses main-actor default isolation (`SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`). Types used off the main actor are marked `nonisolated`; background work uses `@concurrent`. See `Swift-Concurrency-Updates.md`.
 - Compression is AVFoundation only (`AVAssetReader` → `AVAssetWriter`, HEVC). No third-party packages, no FFmpeg.
 - UI test launch arguments are defined in `VideoCompressor/App/LaunchOptions.swift`.
+- The app language (English, Spanish, Bengali) is chosen in Settings, not by the device. Views get it from the SwiftUI environment; code outside views must pass `bundle: L10n.bundle` to `String(localized:)`. After adding or changing strings, build, then run `xcrun xcstringstool sync VideoCompressor/Resources/Localizable.xcstrings --stringsdata <the build's .stringsdata files>` and add the `es` and `bn` translations.
+- `RootView` rebuilds on a language change, so state that must survive it (router, `HomeViewModel`, `PremiumStore`) lives in `VideoCompressorApp`.
+- Premium is a test-phase feature unlocked by hardcoded promo codes in `PremiumStore`; it changes nothing yet. Submit Rating is a placeholder.
+- The encoder uses the classic `requestMediaDataWhenReady` pull model (`SamplePump`). The newer async reader/writer API stalled intermittently in testing; do not switch back without a stress test.
+- Screenshots of every screen: `TEST_RUNNER_SCREENSHOT_DIR=<folder> xcodebuild test -only-testing:VideoCompressorUITests/ScreenshotTour ...`.

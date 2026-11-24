@@ -4,7 +4,7 @@ Things that need you or your Apple account before TestFlight and App Store submi
 
 ## Before the first upload
 - [ ] Replace `developer@gmail.com` in `VideoCompressor/App/AppConfig.swift` with a support address you monitor.
-- [ ] Sign in to Xcode with the Apple ID for team `FGASU9H6S2` and confirm automatic signing resolves for `com.mdnahidabrar.VideoCompressor`.
+- [ ] Sign in to Xcode with the Apple ID for team `65TG6A2C74` and confirm automatic signing resolves for `com.mdnahidabrar.SimpleVideoCompressor`.
 - [ ] Create the app record in App Store Connect. "Video Compressor" is likely taken as a store name, so choose a unique listing name (the home-screen name can stay).
 - [ ] Product → Archive in Xcode, then Validate App, then Distribute to TestFlight.
 
